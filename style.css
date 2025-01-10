@@ -25,6 +25,7 @@
 :root {
   --color-black-main: #0d0d0d;
   --color-gray-42: #424242;
+  --color-gray-92: #929292;
   --font-family-hemi-head-bd-it: 'Hemi-Head-Bd-It';
   --font-family-pretendard-regular: 'Pretendard-Regular';
   --font-family-pretendard-medium: 'Pretendard-Medium';
@@ -52,7 +53,12 @@ img {
 }
 body {
   background-color: var(--color-black-main);
+  position: relative;
+  height: 50000px;
 }
+
+
+
 
 
 
@@ -68,22 +74,16 @@ body {
   display: flex;
   justify-content: center;
 }
-
-/* wrapper 설정 */
-.wrapper {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-}
 /* header 설정 */
 header {
   width: 100%;
   display: flex;
   justify-content: space-between;
   padding: 28px 60px;
-  position: absolute;
+  position: sticky;
   top: 0;
   left: 0;
+  z-index: 100;
 }
 header h1 {
   cursor: pointer;
@@ -100,38 +100,220 @@ header nav > div {
   cursor: pointer;
 }
 
-/* main 설정 */
-main {
+
+/* .viewport 설정 */
+.viewport {
   width: 100%;
   height: 100vh;
+  position: fixed;
+  top: 0;
+  overflow: hidden;
 }
-main .conHero {}
-main .conHero .conHeroEllipseWrap {}
-main .conHero .conHeroEllipseWrap .conHeroEllipse {
-  background-image: url("src/ellipse-pink.png");
-  width: 2160px;
-  height: 1136px;
+/* .contentsWrap 설정 */
+.contentsWrap {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+/* .contentsWrap .conMain-ellipseBox {
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+} */
+ /* conMain 설정 */
+.conMain-ellipseBox .conMain-ellipse {
+  /* background-image: url("src/ellipse-pink.png");
+  background-repeat: no-repeat;
+  background-size: cover; */
+  /* width: 0%;
+  height: 0%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); */
+  /* --------------- */
+}
+.conMain-ellipseBox2 {
+  width: 0px;
+  aspect-ratio: 1.9 / 1;
+  background-color: #F81884;
+  border-radius: 50%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-15deg);
+}
+
+.conMain-products {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(0.3);
-
+  filter: blur(10px);
+  opacity: 0.4;
 }
-main .conHero .conHeroProducts {
+
+.conMain-products img {}
+.conMain-text {
+  position: absolute;
+}
+.conMain-text img {}
+.conMain-text.beMore {
+  top: 10%;
+  right: 100%;
+}
+.conMain-text.dynamic {
+  bottom: 10%;
+  left: 100%;
+}
+/* conMain-centerBox 설정 */
+.conMain-centerBox {
+  /* background-color: red; */
+  width: 900px;
+  height: 900px;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
-main .conHero .conHeroProducts img {}
-main .conHero .conHeroText {
+.conMain-products2 {
   position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
 }
-main .conHero .conHeroText img {}
-main .conHero .conHeroText.beMore {
-  top: 10%;
+.conMain-products2 img {}
+.conMain-text2 {
+  opacity: 0;
 }
-main .conHero .conHeroText.dynamic {
-  bottom: 10%;
-  right: 0;
+.conMain-text2 .title {
+  font-family: var(--font-family-pretendard-bold);
+  font-size: 50px;
+  width: 392px;
+  line-height: 1.5;
+  position: absolute;
+  top: 18%;
+  right: 100%;
 }
+.conMain-text3 {
+  position: absolute;
+  top: 18%;
+  right: 100%;
+  opacity: 0;
+}
+.conMain-text3 .count {
+  font-family: var(--font-family-pretendard-bold);
+  color: #11D96B;
+  font-size: 137px;
+  display: flex;
+  align-items: baseline;
+  gap: 24px;
+}
+.conMain-text3 .count span {
+  font-family: var(--font-family-pretendard-bold);
+  font-size: 64px;
+}
+.conMain-text3 .title {
+  font-family: var(--font-family-pretendard-bold);
+  font-size: 50px;
+  line-height: 1.5;
+}
+.conMain-text4 {
+  position: absolute;
+  bottom: 18%;
+  left: 100%;
+  white-space: nowrap;
+  opacity: 0;
+}
+.conMain-text4 .detail {
+  font-family: var(--font-family-pretendard-bold);
+  color: var(--color-gray-92);
+  font-size: 25px;
+  margin-bottom: 42px;
+}
+.conMain-text4 .detail span {
+  font-family: var(--font-family-pretendard-bold);
+  font-size: 32px;
+  margin-left: 24px;
+}
+.conMain-products3 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
+.conMain-product3 img {}
+.conMain-text5 {
+  position: absolute;
+  top: 18%;
+  right: 100%;
+  white-space: nowrap;
+  opacity: 0;
+}
+.conMain-text5 .title {
+  font-family: var(--font-family-pretendard-bold);
+  font-size: 50px;
+  margin-bottom: 40px;
+}
+.conMain-text5 .detail {
+  font-family: var(--font-family-pretendard-bold);
+  color: var(--color-gray-92);
+  font-size: 25px;
+  margin-bottom: 42px;
+}
+.conMain-text5 .detail span {
+  font-family: var(--font-family-pretendard-bold);
+  font-size: 32px;
+  margin-left: 24px;
+}
+.conMain-text6 {
+  position: absolute;
+  bottom: 18%;
+  left: 100%;
+  white-space: nowrap;
+  opacity: 0;
+}
+.conMain-text6 .title {
+  font-family: var(--font-family-pretendard-bold);
+  font-size: 50px;
+  margin-bottom: 40px;
+}
+.conMain-text6 .batteryDetailBox {
+  display: flex;
+  gap: 80px;
+}
+.conMain-text6 .batteryDetailBox .detail{
+  font-size: 25px;
+  font-family: 'Pretendard-Medium';
+  display: flex;
+  align-items: center;
+}
+.conMain-text6 .batteryDetailBox .detail img{
+  margin-right: 28px;
+}
+
+ /* conQuality 설정 */
+ .conQuality-bestQuality {
+  width: 2643px;
+  height: 416px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(2);
+  opacity: 0;
+ }
+ .conQuality-bestQuality img {
+  position: absolute;
+ }
+ .conQuality-bestQuality img.afterimage {
+  /* background-color: beige; */
+ }
+ .conQuality-bestQuality img.forward {
+  /* background-color: blue; */
+ }
