@@ -128,18 +128,99 @@ document.addEventListener("DOMContentLoaded", (event) => {
     top: "20%",
     transform: "translate(-50%, -50%) scale(0.2)",
   })
-  .to(".conQuality-bestQuality .afterimage", {
+  // .to(".conQuality-bestQuality .afterimage", {
+  //   opacity: 0,
+  //   transform: "scale(1)",
+  // })
+  .to(".contentsWrap", {
+    backgroundColor: "#FF560E",
+  }, "<90%")
+
+  const tl5 = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".conQuality-text1",
+      start: "13500 top",
+      end: "15000 bottom",
+      scrub: 2,
+      markers: true,
+    },
+  });
+  tl5.to(".conQuality-text1 .detail.index0", {
+    opacity: 1,
+  })
+  .to(".conQuality-text1 .detail.index1", {
+    opacity: 1,
+  })
+  .to(".conQuality-text1 .detail.index0", {
     opacity: 0,
-    transform: "scale(1)",
+  })
+  .to(".conQuality-text1 .detail.index1", {
+    opacity: 0,
   })
 
+  const tl6 = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".conQuality-text2",
+      start: "17000 top",
+      end: "18500 bottom",
+      scrub: 2,
+      markers: true,
+    },
+  });
+  tl6.to(".contentsWrap", {
+    backgroundColor: "#720EFF",
+  }, "<90%")
+  .to(".conQuality-text2 img", {
+    opacity: 1,
+  })
+  .to(".conQuality-text2 .detail", {
+    opacity: 1,
+  })
+  .to(".conQuality-text2 img", {
+    opacity: 0,
+  })
+  .to(".conQuality-text2 .detail", {
+    opacity: 0,
+  })
 
+  const tl7 = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".conQuality-text3",
+      start: "20500 top",
+      end: "22000 bottom",
+      scrub: 2,
+      markers: true,
+    },
+  });
+  tl7.to(".contentsWrap", {
+    backgroundColor: "#0E6EFF",
+  }, "<90%")
+  .to(".conQuality-text3 .detail.index0", {
+    opacity: 1,
+  })
+  .to(".conQuality-text3 .detail.index1", {
+    opacity: 1,
+  })
+  .to(".conQuality-text3 .detail.index0", {
+    opacity: 0,
+  })
+  .to(".conQuality-text3 .detail.index1", {
+    opacity: 0,
+  })
 
-
-
-
-
-
+  const tl8 = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".conQuality-text4",
+      start: "24000 top",
+      end: "25500 bottom",
+      scrub: 2,
+      markers: true,
+    },
+  });
+  tl8.to(".conQuality-text4 .imgBox img", {
+    opacity: 1,
+    stagger: 1,
+  })
 
 
 
