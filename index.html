@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -15,7 +16,7 @@
   </div>
   <header>
     <h1>
-      <img src="src/logo.png" alt="다이나믹-로고">
+      <img src="src/logo.png" alt="다이나믹 로고">
     </h1>
     <nav>
       <div>Main</div>
@@ -26,28 +27,25 @@
   </header>
   <div class="viewport">
     <div class="contentsWrap">
-      <!-- <div class="conMain-ellipseBox">
-        <img src="src/ellipse-pink.png" class="conMain-ellipse"></img>
-      </div> -->
-      <div class="conMain-ellipseBox2"></div>
+      <div class="conMain-ellipseBox"></div>
       <div class="conMain-text beMore">
         <img src="src/text-be-more.png" alt="BE-MORE">
       </div>
       <div class="conMain-products">
-        <img src="src/product-01.png" alt="다이나믹-메인-제품-이미지">
+        <img src="src/product-01.png" alt="다이나믹 메인 제품 이미지">
       </div>
       <div class="conMain-text dynamic">
         <img src="src/text-dynamic.png" alt="DYNAMIC">
       </div>
       <div class="conMain-centerBox">
         <div class="conMain-products2">
-          <img src="src/product-02.png" alt="다이나믹-메인-제품-이미지2">
+          <img src="src/product-02.png" alt="다이나믹 메인 제품 이미지2">
         </div>
         <div class="conMain-text2">
           <p class="title">컴팩트한 사이즈로 손 안에 쏙 들어오는 안정적인 그립감</p>
         </div>
         <div class="conMain-text3">
-          <p class="count">5000 <span>PUFFS</span></p>
+          <p class="count"><b id="count">0</b> <span>PUFFS</span></p>
           <p class="title">10ML 대용량으로 하루종일 베이핑해도 걱정없이</p>
         </div>
         <div class="conMain-text4">
@@ -56,7 +54,8 @@
           <p class="detail">Puffs<span>Up to 5000</span></p>
         </div>
         <div class="conMain-products3">
-          <img src="src/product-detail-bottom.png" alt="다이나믹-메인-제품-이미지3">
+          <img src="src/product-detail-bottom.png" alt="다이나믹 메인 제품 하단 이미지">
+          <img class="light" src="src/batteryGreen.png" alt="배터리 완충 색상 연두색">
         </div>
         <div class="conMain-text5">
           <p class="title">C-type 충전방식</p>
@@ -80,9 +79,10 @@
           </ul>
         </div>
       </div>
+      <div class="conQuality-bg"></div>
       <div class="conQuality-bestQuality">
-        <img class="afterimage" src="src/text-best-quality.png" alt="BEST-QUALITY">
-        <img class="forward" src="src/text-best-quality.png" alt="BEST-QUALITY">
+        <img class="afterimage" src="src/text-best-quality.png" alt="BEST QUALITY">
+        <img class="forward" src="src/text-best-quality.png" alt="BEST QUALITY">
       </div>
       <div class="conQuality-text1">
         <p class="detail index0"><b>국내 유일</b> 자체 생산 <b>합성니코틴 사용</b></p>
@@ -105,7 +105,78 @@
         </div>
         <p class="detail">전자담배 액상 제조사에서 개발한 액상!</p>
       </div>
-
+      <div class="conQuality-experts">
+        <img class="imgExperts" src="src/text-experts.png" alt="EXPERTS">
+        <img class="imgGradient" src="src/bg-gradient.png" alt="배경 그래디언트">
+        <div class="conQuality-experts-text">
+          <p class="detail index0">수없이 많은 액상을 개발해온 <b>전문가들</b>이 모여 </p>
+          <p class="detail index1">실패없는 <b>보장된 맛</b>을 제공합니다. </p>
+        </div>
+      </div>
+      <div class="conFlavor">
+        <div class="conFlavor-bg"></div>
+        <div class="conFlavor-title">Flavor</div>
+        <div class="conFlavor-description">
+          <img src="src/text-flavor-cherryCrumble.png" alt="">
+        </div>
+        <div class="conFlavor-imgs">
+          <div class="swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="src/img-flavor-appleRush.png" alt="Apple Rush 기기 이미지">
+                <div class="gradientBox"></div>
+              </div>
+              <div class="swiper-slide">
+                <img src="src/img-flavor-berryStraw.png" alt="Berry Straw 기기 이미지">
+                <div class="gradientBox"></div>
+              </div>
+              <div class="swiper-slide">
+                <img src="src/img-flavor-calime.png" alt="Calime 기기 이미지">
+                <div class="gradientBox"></div>
+              </div>
+              <div class="swiper-slide">
+                <img src="src/img-flavor-cherryCrumble.png" alt="Cherry Crumble 기기 이미지">
+                <div class="gradientBox"></div>
+              </div>
+              <div class="swiper-slide">
+                <img src="src/img-flavor-floridaCigar.png" alt="Florida Cigar 기기 이미지">
+                <div class="gradientBox"></div>
+              </div>
+              <div class="swiper-slide">
+                <img src="src/img-flavor-grapeBear.png" alt="Grape Bear 기기 이미지">
+                <div class="gradientBox"></div>
+              </div>
+              <div class="swiper-slide">
+                <img src="src/img-flavor-mentholBomb.png" alt="Menthol Bomb 기기 이미지">
+                <div class="gradientBox"></div>
+              </div>
+              <div class="swiper-slide">
+                <img src="src/img-flavor-peachWave.png" alt="Peach Wave 기기 이미지">
+                <div class="gradientBox"></div>
+              </div>
+              <div class="swiper-slide">
+                <img src="src/img-flavor-snowSoda.png" alt="Snow Soda 기기 이미지">
+                <div class="gradientBox"></div>
+              </div>
+              <div class="swiper-slide">
+                <img src="src/img-flavor-summerPocari.png" alt="Summer Pocari 기기 이미지">
+                <div class="gradientBox"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="conAboutUs">
+        <div class="blurCircle index0"></div>
+        <div class="blurCircle index1"></div>
+        <div class="conAboutUs-title">AboutUs</div>
+        <div class="conAboutUs-descriptionBox">
+          <img src="src/world-international-logo.png" alt="월드인터네셔널 기업 로고">
+          <p class="introduce">월드인터네셔널은 <b>10년</b> 경력의 전자담배 기업입니다</p>
+          <p class="promise">10년간의 노하우가 담긴 최상급의 품질을 제공해드리겠습니다</p>
+          <button>Contact Us</button>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -113,6 +184,7 @@
 
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="script.js"></script>
 </body>
 
