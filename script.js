@@ -1,6 +1,12 @@
 // use a script tag or an external JS file
 document.addEventListener("DOMContentLoaded", (event) => {
     gsap.registerPlugin(ScrollTrigger);
+    ScrollTrigger.clearScrollMemory();
+    // 페이지 새로고침 후에도 스크롤을 맨 위로 초기화
+    window.addEventListener("beforeunload", () => {
+      ScrollTrigger.clearScrollMemory();
+      window.scrollTo(0, 0); // 스크롤 맨 위로 이동
+    });
 
     // 1. 1스크롤에 블러 제품 이미지 확대
     const tl1 = gsap.timeline({
@@ -10,6 +16,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
             end: '600 bottom',
             scrub: 2,
             markers: true,
+            invalidateOnRefresh: true,
+            // fastScrollEnd: true,
         },
     });
     tl1.to('.conMain-products', {
@@ -26,6 +34,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
             end: '1200 bottom',
             scrub: 2,
             markers: true,
+            invalidateOnRefresh: true,
         },
     });
     tl2.set('.conMain-ellipseBox', {
@@ -62,6 +71,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
             end: '5400 bottom',
             scrub: 2,
             markers: true,
+            invalidateOnRefresh: true,
         },
     });
     tl3.fromTo(
@@ -129,6 +139,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
             // scrub: 2,
             scrub: 1,
             markers: true,
+            invalidateOnRefresh: true,
         },
     });
     tl4.fromTo(
@@ -193,6 +204,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
             end: '11400 bottom',
             scrub: 2,
             markers: true,
+            invalidateOnRefresh: true,
         },
     });
     tl5.to('.conMain-text2', {
@@ -244,6 +256,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
             end: '14500 bottom',
             scrub: 2,
             markers: true,
+            invalidateOnRefresh: true,
         },
     });
     tl6.to('.conMain-products3', {
@@ -290,6 +303,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
             end: '16500 bottom',
             scrub: 2,
             markers: true,
+            invalidateOnRefresh: true,
         },
     });
     tl7.to('.conQuality-text1 .detail.index0', {
@@ -310,6 +324,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
             end: '17500 bottom',
             scrub: 2,
             markers: true,
+            invalidateOnRefresh: true,
         },
     });
     tl8.to(
@@ -328,6 +343,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
             end: '19500 bottom',
             scrub: 2,
             markers: true,
+            invalidateOnRefresh: true,
         },
     });
     tl9.to(
@@ -352,6 +368,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
             end: '25000 bottom',
             scrub: 2,
             markers: true,
+            invalidateOnRefresh: true,
         },
     });
     tl10.to('.conQuality-text3', {
@@ -393,6 +410,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
             end: '29000 bottom',
             scrub: 2,
             markers: true,
+            invalidateOnRefresh: true,
         },
     });
     tl11.to('.conQuality-text4', {
@@ -440,6 +458,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
             end: '30500 bottom',
             scrub: 2,
             markers: true,
+            // invalidateOnRefresh: true, 설정하면 안보임
         },
     });
     tl12.to('.conFlavor', {
@@ -461,6 +480,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
           end: '42000 bottom',
           scrub: 2,
           markers: true,
+          invalidateOnRefresh: true,
       },
     });
     tl13.to(".conAboutUs", {
