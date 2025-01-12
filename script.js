@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     });
 
     // 2. 1스크롤에 핑크타원, be more, dynamic 텍스트 등장
-    const tl1a = gsap.timeline({
+    const tl2 = gsap.timeline({
         scrollTrigger: {
             trigger: '.conMain-products',
             start: '600 top',
@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
             markers: true,
         },
     });
-    tl1a.set('.conMain-ellipseBox', {
+    tl2.set('.conMain-ellipseBox', {
         borderRadius: '50%',
         rotate: '-15deg',
         width: '10vw',
@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         );
 
     // 3. 1스크롤에 be more, dynamic 텍스트 사라짐, 핑크 납작해짐, 기기 사라짐
-    const tl2 = gsap.timeline({
+    const tl3 = gsap.timeline({
         scrollTrigger: {
             trigger: '.conMain-text',
             start: '1600 top',
@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
             markers: true,
         },
     });
-    tl2.fromTo(
+    tl3.fromTo(
         '.conMain-ellipseBox',
         {
             width: '180vw',
@@ -117,19 +117,21 @@ document.addEventListener("DOMContentLoaded", (event) => {
             '<50%'
         );
 
+
     // 4. conMain-products2 제품 설명 텍스트 등장
     var puffCounter = { var: 0 };
     var count = document.getElementById('count');
-    const tl3 = gsap.timeline({
+    const tl4 = gsap.timeline({
         scrollTrigger: {
             trigger: '.conMain-products2',
             start: '5400 top',
             end: '8400 bottom',
-            scrub: 2,
+            // scrub: 2,
+            scrub: 1,
             markers: true,
         },
     });
-    tl3.fromTo(
+    tl4.fromTo(
         '.conMain-text2',
         {
             x: -100,
@@ -170,9 +172,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
         );
     // 스크롤탑이 7000 이상되면 puffs 숫자 0 에서 5000으로 증가
     addEventListener('scroll', () => {
-        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        console.log(scrollTop);
-        if (scrollTop > 7000) {
+        let sc = window.pageYOffset || document.documentElement.scrollTop;
+        console.log(sc);
+        if (sc > 7000) {
             gsap.to(puffCounter, {
                 var: 5000,
                 duration: 1,
@@ -184,7 +186,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     });
 
     // 5. 이전 텍스트 사라지고 새로운 설명 텍스트 등장
-    const tl3a = gsap.timeline({
+    const tl5 = gsap.timeline({
         scrollTrigger: {
             trigger: '.conMain-products2',
             start: '8400 top',
@@ -193,7 +195,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
             markers: true,
         },
     });
-    tl3a.to('.conMain-text2', {
+    tl5.to('.conMain-text2', {
         x: -100,
         opacity: 0,
     })
@@ -235,7 +237,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         );
 
     // 6. bestQuality 화면 등장
-    const tl4 = gsap.timeline({
+    const tl6 = gsap.timeline({
         scrollTrigger: {
             trigger: '.conQuality-bestQuality',
             start: '13000 top',
@@ -244,7 +246,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
             markers: true,
         },
     });
-    tl4.to('.conMain-products3', {
+    tl6.to('.conMain-products3', {
         opacity: 0,
     })
         .to(
@@ -281,7 +283,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         });
 
     // 7. quality 의 텍스트1 등장
-    const tl5 = gsap.timeline({
+    const tl7 = gsap.timeline({
         scrollTrigger: {
             trigger: '.conQuality-text1',
             start: '14500 top',
@@ -290,7 +292,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
             markers: true,
         },
     });
-    tl5.to('.conQuality-text1 .detail.index0', {
+    tl7.to('.conQuality-text1 .detail.index0', {
         opacity: 1,
     }).to(
         '.conQuality-text1 .detail.index1',
@@ -301,7 +303,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     );
 
     // 8. quality 의 purple 배경 우측에서 들어와 orange 배경 덮음
-    const tl5a = gsap.timeline({
+    const tl8 = gsap.timeline({
         scrollTrigger: {
             trigger: '.conQuality-bg.orange',
             start: '17000 top',
@@ -310,7 +312,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
             markers: true,
         },
     });
-    tl5a.to(
+    tl8.to(
         '.conQuality-bg.purple',
         {
             x: '-100%',
@@ -319,7 +321,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     );
 
     // 9.  quality 의 blue 배경 우측에서 들어와 purple 배경 덮음
-    const tl5b = gsap.timeline({
+    const tl9 = gsap.timeline({
         scrollTrigger: {
             trigger: '.conQuality-bg.purple',
             start: '19000 top',
@@ -328,7 +330,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
             markers: true,
         },
     });
-    tl5b.to(
+    tl9.to(
         '.conQuality-bg.purple',
         {
             x: '-100%',
@@ -343,7 +345,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     );
 
     // 10. quality 의 text4 등장
-    const tl8 = gsap.timeline({
+    const tl10 = gsap.timeline({
         scrollTrigger: {
             trigger: '.conQuality-text4',
             start: '21000 top',
@@ -352,7 +354,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
             markers: true,
         },
     });
-    tl8.to('.conQuality-text3', {
+    tl10.to('.conQuality-text3', {
         // x: "26.8vw",
         y: '-1vw',
         opacity: 0,
@@ -384,7 +386,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         );
 
     // 11. conQuality-experts 등장
-    const tl9 = gsap.timeline({
+    const tl11 = gsap.timeline({
         scrollTrigger: {
             trigger: '.conQuality-experts',
             start: '25500 top',
@@ -393,7 +395,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
             markers: true,
         },
     });
-    tl9.to('.conQuality-text4', {
+    tl11.to('.conQuality-text4', {
         opacity: 0,
     })
         .to('.conQuality-bg.blue .colorBox', {
@@ -431,7 +433,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         });
 
     // 12. conFlavor 등장
-    const tl10 = gsap.timeline({
+    const tl12 = gsap.timeline({
         scrollTrigger: {
             trigger: '.conFlavor',
             start: '30000 top',
@@ -440,7 +442,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
             markers: true,
         },
     });
-    tl10.to('.conFlavor', {
+    tl12.to('.conFlavor', {
         opacity: 1,
     }).from(
         '.conFlavor-bg',
@@ -449,69 +451,42 @@ document.addEventListener("DOMContentLoaded", (event) => {
         },
         '<'
     );
-    // .to(".conFlavor-description", {
-    //   x: 200,
-    // }, "<")
-    // .to(".conFlavor-imgs", {
-    //   x: -200,
-    // }, "<")
-    // .from(".conFlavor-title", {
-    //   y: -50,
-    //   opacity: 0,
-    // }, "<")
 
-    // const tl11 = gsap.timeline({
-    //   scrollTrigger: {
-    //     trigger: ".conFlavor",
-    //     start: "35500 top",
-    //     end: "35500 bottom",
-    //     scrub: 2,
-    //     markers: true,
-    //   },
-    // });
-    // tl11.to(".conFlavor", {
-    //   opacity: 1,
-    // })
-    // .to(".conFlavor-description", {
-    //   x: -200,
-    //   opacity: 0,
-    // }, "<")
-    // .to(".conFlavor-imgs", {
-    //   x: 200,
-    //   opacity: 0,
-    // }, "<")
-    // .to(".conFlavor-title", {
-    //   y: -50,
-    //   opacity: 0,
-    // }, "<")
 
-    // const tl12 = gsap.timeline({
-    //   scrollTrigger: {
-    //     trigger: ".conAboutUs",
-    //     start: "32000 top",
-    //     end: "38000 bottom",
-    //     scrub: 2,
-    //     markers: true,
-    //   },
-    // });
-    // tl12.to(".conAboutUs", {
-    //   opacity: 1,
-    // })
-    // .to(".conAboutUs-title", {
-    //   opacity: 1,
-    // })
-    // .to(".conAboutUs-descriptionBox img", {
-    //   opacity: 1,
-    // })
-    // .to(".conAboutUs-descriptionBox .introduce", {
-    //   opacity: 1,
-    // })
-    // .to(".conAboutUs-descriptionBox .promise", {
-    //   opacity: 1,
-    // })
-    // .to(".conAboutUs-descriptionBox button", {
-    //   opacity: 1,
-    // })
+    // 13. aboutUs 등장
+    const tl13 = gsap.timeline({
+      scrollTrigger: {
+          trigger: '.conAboutUs',
+          start: '35000 top',
+          end: '42000 bottom',
+          scrub: 2,
+          markers: true,
+      },
+    });
+    tl13.to(".conAboutUs", {
+      opacity: 1,
+      zIndex: 10,
+    })
+    .to(".conAboutUs-title", {
+      opacity: 1,
+    })
+    .to(".conAboutUs-descriptionBox img", {
+      opacity: 1,
+    })
+    .to(".conAboutUs-descriptionBox .introduce", {
+      opacity: 1,
+    })
+    .to(".conAboutUs-descriptionBox .promise", {
+      opacity: 1,
+    })
+    .to(".conAboutUs-descriptionBox button", {
+      opacity: 1,
+    })
+    .to(".conAboutUs footer", {
+      opacity: 1,
+    })
+
+    
 
     // swiper 설정
     const swiper = new Swiper('.swiper', {
@@ -528,7 +503,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
     // [conFlavor 의 이미지 슬라이드에 해당하는 맛 설명 나오는 함수]
     // 설명 업데이트 함수
-        function updateDescription(flavor) {
+    function updateDescription(flavor) {
       // 모든 설명 숨기기
       document.querySelectorAll('.conFlavor-description .list').forEach(list => {
         list.classList.remove('active');
@@ -538,6 +513,34 @@ document.addEventListener("DOMContentLoaded", (event) => {
       if (activeDescription) {
         activeDescription.classList.add('active');
       }
+
+      // [맛 설명 바 수치 값 적용]
+      let sweetness = document.querySelector(`.conFlavor-description .list[data-flavor="${flavor}"] .sweetness .value`);
+      let sour = document.querySelector(`.conFlavor-description .list[data-flavor="${flavor}"] .sour .value`);
+      let neck = document.querySelector(`.conFlavor-description .list[data-flavor="${flavor}"] .neck .value`);
+      let weight = document.querySelector(`.conFlavor-description .list[data-flavor="${flavor}"] .weight .value`);
+      let cooling = document.querySelector(`.conFlavor-description .list[data-flavor="${flavor}"] .cooling .value`);
+      // 맛 설명 바 의 data-value 값 가져오기
+      let sweetnessValue = sweetness.dataset.value;
+      let sourValue = sour.dataset.value;
+      let neckValue = neck.dataset.value;
+      let weightValue = weight.dataset.value;
+      let coolingValue = cooling.dataset.value;
+      // 맛 설명 바 수치 값 적용
+      // 1.초기화
+        sweetness.style.width = '0%'; 
+        sour.style.width = '0%';
+        neck.style.width = '0%';
+        weight.style.width = '0%';
+        cooling.style.width = '0%';
+      // 2. 브라우저가 스타일 변경을 인지하도록 강제 트리거
+      requestAnimationFrame(() => {
+        sweetness.style.width = `${sweetnessValue * 10}%`;
+        sour.style.width = `${sourValue * 10}%`;
+        neck.style.width = `${neckValue * 10}%`;
+        weight.style.width = `${weightValue * 10}%`;
+        cooling.style.width = `${coolingValue * 10}%`;
+      });
     }
 
     // 초기 설명 표시
@@ -556,7 +559,43 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
 
 
-    
+  // [header 클릭 시 스크롤탑 이동] 
+  const mainMenu = document.querySelector('header nav div:nth-child(1)');
+  const qualityMenu = document.querySelector('header nav div:nth-child(2)');
+  const flavorMenu = document.querySelector('header nav div:nth-child(3)');
+  const aboutUsMenu = document.querySelector('header nav div:nth-child(4)');
+
+  // mainMenu 클릭 시 스크롤 위치 이동
+  mainMenu.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth" // 부드럽게 스크롤 이동
+    });
+  });
+
+  // qualityMenu 클릭 시 스크롤 위치 이동
+  qualityMenu.addEventListener("click", () => {
+    window.scrollTo({
+      top: 16500,
+      behavior: "smooth"
+    });
+  });
+
+  // flavorMenu 클릭 시 스크롤 위치 이동
+  flavorMenu.addEventListener("click", () => {
+    window.scrollTo({
+      top: 30700,
+      behavior: "smooth"
+    });
+  });
+
+  // aboutUsMenu 클릭 시 스크롤 위치 이동
+  aboutUsMenu.addEventListener("click", () => {
+    window.scrollTo({
+      top: 41000,
+      behavior: "smooth"
+    });
+  });
 
 
 });

@@ -33,7 +33,6 @@
   --font-family-pretendard-medium: 'Pretendard-Medium';
   --font-family-pretendard-semibold: 'Pretendard-SemiBold';
   --font-family-pretendard-bold: 'Pretendard-Bold';
-  --font-size-rem-from-1px: 0.063rem;
 }
 
 /* 전체설정 */
@@ -57,7 +56,7 @@ img {
 body {
   background-color: var(--color-black-main);
   position: relative;
-  height: 50000px;
+  height: 42000px;
   /* 드래그 방지 */
   -webkit-user-select:none;
   -moz-user-select:none;
@@ -74,7 +73,7 @@ body {
 .warningBox {
   width: 100%;
   padding: 1.5vw;
-  border-bottom: 1px solid var(--color-gray-42);
+  border-bottom: 0.1vw solid var(--color-gray-42);
 }
 .warningBox p {
   font-size: 1.5vw;
@@ -150,7 +149,7 @@ header nav > div {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(0.4);
-  filter: blur(30px);
+  filter: blur(1.8vw);
   opacity: 0.4;
 }
 
@@ -215,7 +214,7 @@ header nav > div {
 .conMain-text3 .count {
   display: flex;
   align-items: baseline;
-  gap: 24px;
+  gap: 1vw;
 }
 .conMain-text3 .count b {
   font-family: var(--font-family-pretendard-bold);
@@ -548,7 +547,8 @@ header nav > div {
   position: absolute;
   width: 100%;
   height: 100vh;
-  background-color: #393939;
+  /* background-color: #393939; */
+  background-color: #121315;
 }
 .conFlavor-title {
   font-family: var(--font-family-hemi-head-bd-it);
@@ -565,7 +565,7 @@ header nav > div {
   height: 60vh;
   position: absolute;
   top: 50%;
-  left: 12%;
+  left: 15%;
   transform: translate(0%, -50%);
 }
 .conFlavor .conFlavor-description img {
@@ -582,8 +582,110 @@ header nav > div {
   display: block;
   opacity: 1;
 }
-
-
+.conFlavor-description .list h3 {
+  font-size: 2.8vw;
+  font-family: var(--font-family-hemi-head-bd-it);
+  margin-bottom: 1vw;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.5;
+}
+.conFlavor-description .list h3 span {
+  white-space: nowrap;
+  font-size: 2.2vw;
+}
+.conFlavor-description .list[data-flavor="floridaCigar"] h3, .list[data-flavor="floridaCigar"] .titleKo {
+  color: #7B655A;
+}
+.conFlavor-description .list[data-flavor="mentholBomb"] h3, .list[data-flavor="mentholBomb"] .titleKo {
+  color: #43B9A8;
+}
+.conFlavor-description .list[data-flavor="calime"] h3, .list[data-flavor="calime"] .titleKo {
+  color: #D3DF4C;
+}
+.conFlavor-description .list[data-flavor="berryStraw"] h3, .list[data-flavor="berryStraw"] .titleKo {
+  color: #E95885;
+}
+.conFlavor-description .list[data-flavor="snowSoda"] h3, .list[data-flavor="snowSoda"] .titleKo {
+  color: #C7E8FA;
+}
+.conFlavor-description .list[data-flavor="grapeBear"] h3, .list[data-flavor="grapeBear"] .titleKo {
+  color: #C464A3;
+}
+.conFlavor-description .list[data-flavor="appleRush"] h3, .list[data-flavor="appleRush"] .titleKo {
+  color: #8EC445;
+}
+.conFlavor-description .list[data-flavor="peachWave"] h3, .list[data-flavor="peachWave"] .titleKo {
+  color: #F2A7C1;
+}
+.conFlavor-description .list[data-flavor="summerPocari"] h3, .list[data-flavor="summerPocari"] .titleKo {
+  color: #007AC6; 
+} 
+.conFlavor-description .list[data-flavor="cherryCrumble"] h3, .list[data-flavor="cherryCrumble"] .titleKo {
+  color: #E60041;
+}
+.conFlavor-description .list p {
+  font-size: 1.2vw;
+  font-family: var(--font-family-pretendard-medium);
+  margin-bottom: 3vw;
+}
+.conFlavor-description .list ul {
+  display: flex;
+  flex-direction: column;
+  gap: 2vw;
+}
+.conFlavor-description .list ul li {
+  display: flex;
+  align-items: center;
+  gap: 1.5vw;
+}
+.conFlavor-description .list ul li span {
+  font-size: 1.2vw;
+}
+.conFlavor-description .list ul li .bar {
+  background-color: var(--color-gray-b1);
+  width: 10vw;
+  height: 0.5vw;
+  position: relative;
+}
+.conFlavor-description .list ul li .bar .value {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0%;
+  transition: all 1s;
+}
+.conFlavor-description .list[data-flavor="floridaCigar"] .value {
+  background-color: #7B655A;
+}
+.conFlavor-description .list[data-flavor="mentholBomb"] .value {
+  background-color: #43B9A8;
+}
+.conFlavor-description .list[data-flavor="calime"] .value {
+  background-color: #D3DF4C;
+}
+.conFlavor-description .list[data-flavor="berryStraw"] .value {
+  background-color: #E95885;
+}
+.conFlavor-description .list[data-flavor="snowSoda"] .value {
+  background-color: #C7E8FA;
+}
+.conFlavor-description .list[data-flavor="grapeBear"] .value {
+  background-color: #C464A3;
+}
+.conFlavor-description .list[data-flavor="appleRush"] .value {
+  background-color: #8EC445;
+}
+.conFlavor-description .list[data-flavor="peachWave"] .value {
+  background-color: #F2A7C1;
+}
+.conFlavor-description .list[data-flavor="summerPocari"] .value {
+  background-color: #007AC6; 
+}
+.conFlavor-description .list[data-flavor="cherryCrumble"] .value {
+  background-color: #E60041;
+}
 
 
 
@@ -597,7 +699,7 @@ header nav > div {
   right: 2.5vw;
 }
 .conFlavor .conFlavor-imgs .swiper{
-  padding-right: 60px;
+  padding-right: 5vw;
 }
 .conFlavor .conFlavor-imgs .swiper-wrapper {}
 .conFlavor .conFlavor-imgs .swiper-slide {
@@ -608,18 +710,18 @@ header nav > div {
 }
 .conFlavor .conFlavor-imgs .swiper-slide-active {
   transform: scale(0.8);
-  margin: 0 60px;
+  margin: 0 3.1vw;
 }
 .conFlavor .conFlavor-imgs .swiper-slide img {
-  height: 860px;
+  height: 45vw;
 }
 .conFlavor .conFlavor-imgs .swiper-slide .gradientBox {
   position: absolute;
-  background: linear-gradient(180deg, transparent 0%, #393939 100%);
+  background: linear-gradient(180deg, transparent 0%, #121315 100%);
   width: 100%;
-  height: 250px;
+  height: 13vw;
   bottom: 0;
-  margin: 0 60px;
+  margin: 0 3.6vw;
 }
 
 /* conAboutUs 설정 */
@@ -634,24 +736,24 @@ header nav > div {
 }
 .conAboutUs .blurCircle {
   background-color: #B0F2F0;
-  width: 414px;
-  height: 414px;
+  width: 25vw;
+  height: 25vw;
   border-radius: 50%;
-  filter: blur(120px);
+  filter: blur(7vw);
   position: absolute;
 }
 .conAboutUs .blurCircle.index0 {
-  top: -100px;
-  left: -100px;
+  top: -8vw;
+  left: -8vw;
 }
 .conAboutUs .blurCircle.index1 {
-  bottom: -100px;
-  right: -100px;
+  bottom: -8vw;
+  right: -8vw;
 }
 .conAboutUs-title {
   font-family: var(--font-family-hemi-head-bd-it);
   color: var(--color-black-main);
-  font-size: 42px;
+  font-size: 2.2vw;
   position: absolute;
   top: 15%;
   left: 50%;
@@ -662,31 +764,31 @@ header nav > div {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 76px;
+  gap: 4vw;
   position: absolute;
-  top: calc(50% + 40px);
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 .conAboutUs-descriptionBox img {
-  width: 120px;
+  width: 6.2vw;
   opacity: 0;
 }
 .conAboutUs-descriptionBox .introduce {
-  font-size: 45px;
+  font-size: 2.4vw;
   font-family: var(--font-family-pretendard-bold);
   white-space: nowrap;
   color: var(--color-black-main);
   opacity: 0;
 }
 .conAboutUs-descriptionBox .introduce b {
-  font-size: 70px;
+  font-size: 3.6vw;
   color: var(--color-world-international);
-  margin: 0 8px;
+  margin: 0 0.4vw;
 }
 .conAboutUs-descriptionBox .promise {
-  color: #cecece;
-  font-size: 24px;
+  color: #a2a2a2;
+  font-size: 1.3vw;
   font-family: var(--font-family-pretendard-medium);
   opacity: 0;
 }
@@ -694,15 +796,29 @@ header nav > div {
   background-color: var(--color-world-international);
   color: #fff;
   cursor: pointer;
-  border-radius: 5px;
-  border: 1px solid var(--color-world-international);
-  padding: 18px 28px;
+  border-radius: 0.3vw;
+  border: 0.1vw solid var(--color-world-international);
+  padding: 0.8vw 1.4vw;
   font-family: var(--font-family-pretendard-bold);
-  font-size: 22px;
-  transition: all 0.2s;
+  font-size: 1.2vw;
+  transition: all 0.1s;
   opacity: 0;
 }
 .conAboutUs-descriptionBox button:active {
   background-color: #fff;
   color: var(--color-world-international);
+}
+.conAboutUs footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  opacity: 0;
+}
+.conAboutUs footer p {
+  color: rgb(194, 194, 194);
+  font-family: var(--font-family-pretendard-regular);
+  font-size: 0.7vw;
+  padding: 1vw 0;
 }

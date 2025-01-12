@@ -149,65 +149,365 @@
         <div class="conFlavor-bg">
           <div class="conFlavor-title">Flavor</div>
           <div class="conFlavor-description">
-            <!-- <img src="src/img-flavor-appleRush.png" alt="Apple Rush 맛 설명" data-flavor="appleRush"> -->
-            <!-- <img src="src/img-flavor-berryStraw.png" alt="Berry Straw 맛 설명" data-flavor="berryStraw">
-            <img src="src/img-flavor-calime.png" alt="Calime 맛 설명" data-flavor="calime">
-            <img src="src/text-flavor-cherryCrumble.png" alt="Cherry Crumble 맛 설명" data-flavor="cherryCrumble">
-            <img src="src/img-flavor-floridaCigar.png" alt="Florida Cigar 맛 설명" data-flavor="floridaCigar">
-            <img src="src/img-flavor-grapeBear.png" alt="Grape Bear 맛 설명" data-flavor="grapeBear">
-            <img src="src/img-flavor-mentholBomb.png" alt="Menthol Bomb 맛 설명" data-flavor="mentholBomb">
-            <img src="src/img-flavor-peachWave.png" alt="Peach Wave 맛 설명" data-flavor="peachWave">
-            <img src="src/img-flavor-snowSoda.png" alt="Snow Soda 맛 설명" data-flavor="snowSoda">
-            <img src="src/img-flavor-summerPocari.png" alt="Summer Pocari 맛 설명" data-flavor="summerPocari"> -->
             <div class="list" data-flavor="floridaCigar">
-              <h3>Florida Cigar</h3>
-              <p>깊은 맛과 묵직한 목넘김이 특징인 맛</p>
-
+              <h3>Florida Cigar <span class="titleKo">플로리다 시가</span></h3>
+              <p>깊은 무게감이 느껴지는 시가 맛</p>
+              <ul>
+                <li class="sweetness">
+                  <span>달콤함</span>
+                  <div class="bar">
+                    <div class="value" data-value="0"></div>
+                  </div>
+                </li>
+                <li class="sour">
+                  <span>상큼함</span>
+                  <div class="bar">
+                    <div class="value" data-value="0"></div>
+                  </div>
+                </li>
+                <li class="neck">
+                  <span>목넘김</span>
+                  <div class="bar">
+                    <div class="value" data-value="8"></div>
+                  </div>
+                </li>
+                <li class="weight">
+                  <span>무게감</span>
+                  <div class="bar">
+                    <div class="value" data-value="8"></div>
+                  </div>
+                </li>
+                <li class="cooling">
+                  <span>쿨링감</span>
+                  <div class="bar">
+                    <div class="value" data-value="0"></div>
+                  </div>
+                </li>
+              </ul>
             </div>
             <div class="list" data-flavor="mentholBomb">
-              <h3>Menthol Bomb</h3>
-              <p>강력한 쿨링감과 깊은 맛이 특징인 맛</p>
-
+              <h3>Menthol Bomb <span class="titleKo">멘솔 밤</span></h3>
+              <p>강력하고 깊은 쿨링감이 느껴지는 멘솔 맛</p>
+              <ul>
+                <li class="sweetness">
+                  <span>달콤함</span>
+                  <div class="bar">
+                    <div class="value" data-value="1"></div>
+                  </div>
+                </li>
+                <li class="sour">
+                  <span>상큼함</span>
+                  <div class="bar">
+                    <div class="value" data-value="0"></div>
+                  </div>
+                </li>
+                <li class="neck">
+                  <span>목넘김</span>
+                  <div class="bar">
+                    <div class="value" data-value="7"></div>
+                  </div>
+                </li>
+                <li class="weight">
+                  <span>무게감</span>
+                  <div class="bar">
+                    <div class="value" data-value="5"></div>
+                  </div>
+                </li>
+                <li class="cooling">
+                  <span>쿨링감</span>
+                  <div class="bar">
+                    <div class="value" data-value="6"></div>
+                  </div>
+                </li>
+              </ul>
             </div>
             <div class="list" data-flavor="calime">
-              <h3>Calime</h3>
-              <p>상큼한 라임의 청량감이 특징인 맛</p>
-              
+              <h3>Calime <span class="titleKo">칼라임</span></h3>
+              <p>달콤하고 상큼한 깔라만시 맛</p>
+              <ul>
+                <li class="sweetness">
+                  <span>달콤함</span>
+                  <div class="bar">
+                    <div class="value" data-value="4"></div>
+                  </div>
+                </li>
+                <li class="sour">
+                  <span>상큼함</span>
+                  <div class="bar">
+                    <div class="value" data-value="8"></div>
+                  </div>
+                </li>
+                <li class="neck">
+                  <span>목넘김</span>
+                  <div class="bar">
+                    <div class="value" data-value="4"></div>
+                  </div>
+                </li>
+                <li class="weight">
+                  <span>무게감</span>
+                  <div class="bar">
+                    <div class="value" data-value="2"></div>
+                  </div>
+                </li>
+                <li class="cooling">
+                  <span>쿨링감</span>
+                  <div class="bar">
+                    <div class="value" data-value="6"></div>
+                  </div>
+                </li>
+              </ul>
             </div>
             <div class="list" data-flavor="berryStraw">
-              <h3>Berry Straw</h3>
-              <p>달콤한 베리와 상큼함이 조화로운 맛</p>
-              
+              <h3>Berry Straw <span class="titleKo">베리 스트로우</span></h3>
+              <p>달콤함과 상큼함이 조화로운 딸기 맛</p>
+              <ul>
+                <li class="sweetness">
+                  <span>달콤함</span>
+                  <div class="bar">
+                    <div class="value" data-value="6"></div>
+                  </div>
+                </li>
+                <li class="sour">
+                  <span>상큼함</span>
+                  <div class="bar">
+                    <div class="value" data-value="6"></div>
+                  </div>
+                </li>
+                <li class="neck">
+                  <span>목넘김</span>
+                  <div class="bar">
+                    <div class="value" data-value="4"></div>
+                  </div>
+                </li>
+                <li class="weight">
+                  <span>무게감</span>
+                  <div class="bar">
+                    <div class="value" data-value="4"></div>
+                  </div>
+                </li>
+                <li class="cooling">
+                  <span>쿨링감</span>
+                  <div class="bar">
+                    <div class="value" data-value="6"></div>
+                  </div>
+                </li>
+              </ul>
             </div>
             <div class="list" data-flavor="snowSoda">
-              <h3>Snow Soda</h3>
-              <p>달콤하고 시원한 소다맛</p>
-              
+              <h3>Snow Soda <span class="titleKo">스노우 소다</span></h3>
+              <p>달콤하고 시원한 소다 맛</p>
+              <ul>
+                <li class="sweetness">
+                  <span>달콤함</span>
+                  <div class="bar">
+                    <div class="value" data-value="7"></div>
+                  </div>
+                </li>
+                <li class="sour">
+                  <span>상큼함</span>
+                  <div class="bar">
+                    <div class="value" data-value="3"></div>
+                  </div>
+                </li>
+                <li class="neck">
+                  <span>목넘김</span>
+                  <div class="bar">
+                    <div class="value" data-value="4"></div>
+                  </div>
+                </li>
+                <li class="weight">
+                  <span>무게감</span>
+                  <div class="bar">
+                    <div class="value" data-value="5"></div>
+                  </div>
+                </li>
+                <li class="cooling">
+                  <span>쿨링감</span>
+                  <div class="bar">
+                    <div class="value" data-value="7"></div>
+                  </div>
+                </li>
+              </ul>
             </div>
             <div class="list" data-flavor="grapeBear">
-              <h3>Grape Bear</h3>
-              <p>달콤한 포도맛과 쿨링감이 어우러진 맛</p>
-              
+              <h3>Grape Bear <span class="titleKo">그레이프 베어</span></h3>
+              <p>달콤함과 쿨링감이 어우러진 포도 맛</p>
+              <ul>
+                <li class="sweetness">
+                  <span>달콤함</span>
+                  <div class="bar">
+                    <div class="value" data-value="7"></div>
+                  </div>
+                </li>
+                <li class="sour">
+                  <span>상큼함</span>
+                  <div class="bar">
+                    <div class="value" data-value="4"></div>
+                  </div>
+                </li>
+                <li class="neck">
+                  <span>목넘김</span>
+                  <div class="bar">
+                    <div class="value" data-value="4"></div>
+                  </div>
+                </li>
+                <li class="weight">
+                  <span>무게감</span>
+                  <div class="bar">
+                    <div class="value" data-value="5"></div>
+                  </div>
+                </li>
+                <li class="cooling">
+                  <span>쿨링감</span>
+                  <div class="bar">
+                    <div class="value" data-value="6"></div>
+                  </div>
+                </li>
+              </ul>
             </div>
             <div class="list" data-flavor="appleRush">
-              <h3>Apple Rush</h3>
-              <p>상큼한 사과맛과 쿨링감이 특징인 맛</p>
-              
+              <h3>Apple Rush <span class="titleKo">애플 러쉬</span></h3>
+              <p>시원하고 달콤한 사과 맛</p>
+              <ul>
+                <li class="sweetness">
+                  <span>달콤함</span>
+                  <div class="bar">
+                    <div class="value" data-value="5"></div>
+                  </div>
+                </li>
+                <li class="sour">
+                  <span>상큼함</span>
+                  <div class="bar">
+                    <div class="value" data-value="6"></div>
+                  </div>
+                </li>
+                <li class="neck">
+                  <span>목넘김</span>
+                  <div class="bar">
+                    <div class="value" data-value="4"></div>
+                  </div>
+                </li>
+                <li class="weight">
+                  <span>무게감</span>
+                  <div class="bar">
+                    <div class="value" data-value="3"></div>
+                  </div>
+                </li>
+                <li class="cooling">
+                  <span>쿨링감</span>
+                  <div class="bar">
+                    <div class="value" data-value="6"></div>
+                  </div>
+                </li>
+              </ul>
             </div>
             <div class="list" data-flavor="peachWave">
-              <h3>Peach Wave</h3>
-              <p>달콤한 복숭아맛이 특징인 맛</p>
-              
+              <h3>Peach Wave <span class="titleKo">피치 웨이브</span></h3>
+              <p>달콤하고 상큼한 복숭아 맛</p>
+              <ul>
+                <li class="sweetness">
+                  <span>달콤함</span>
+                  <div class="bar">
+                    <div class="value" data-value="5"></div>
+                  </div>
+                </li>
+                <li class="sour">
+                  <span>상큼함</span>
+                  <div class="bar">
+                    <div class="value" data-value="3"></div>
+                  </div>
+                </li>
+                <li class="neck">
+                  <span>목넘김</span>
+                  <div class="bar">
+                    <div class="value" data-value="4"></div>
+                  </div>
+                </li>
+                <li class="weight">
+                  <span>무게감</span>
+                  <div class="bar">
+                    <div class="value" data-value="5"></div>
+                  </div>
+                </li>
+                <li class="cooling">
+                  <span>쿨링감</span>
+                  <div class="bar">
+                    <div class="value" data-value="6"></div>
+                  </div>
+                </li>
+              </ul>
             </div>
             <div class="list" data-flavor="summerPocari">
-              <h3>Summer Pocari</h3>
+              <h3>Summer Pocari <span class="titleKo">써머 포카리</span></h3>
               <p>달콤하고 시원한 이온음료 맛</p>
-              
+              <ul>
+                <li class="sweetness">
+                  <span>달콤함</span>
+                  <div class="bar">
+                    <div class="value" data-value="6"></div>
+                  </div>
+                </li>
+                <li class="sour">
+                  <span>상큼함</span>
+                  <div class="bar">
+                    <div class="value" data-value="3"></div>
+                  </div>
+                </li>
+                <li class="neck">
+                  <span>목넘김</span>
+                  <div class="bar">
+                    <div class="value" data-value="4"></div>
+                  </div>
+                </li>
+                <li class="weight">
+                  <span>무게감</span>
+                  <div class="bar">
+                    <div class="value" data-value="3"></div>
+                  </div>
+                </li>
+                <li class="cooling">
+                  <span>쿨링감</span>
+                  <div class="bar">
+                    <div class="value" data-value="6"></div>
+                  </div>
+                </li>
+              </ul>
             </div>
             <div class="list" data-flavor="cherryCrumble">
-              <h3>Cherry Crumble</h3>
-              <p>달콤한 체리맛이 특징인 맛</p>
-              
+              <h3>Cherry Crumble <span class="titleKo">체리 크럼블</span></h3>
+              <p>달콤하고 새콤한 체리 맛</p>
+              <ul>
+                <li class="sweetness">
+                  <span>달콤함</span>
+                  <div class="bar">
+                    <div class="value" data-value="6"></div>
+                  </div>
+                </li>
+                <li class="sour">
+                  <span>상큼함</span>
+                  <div class="bar">
+                    <div class="value" data-value="2"></div>
+                  </div>
+                </li>
+                <li class="neck">
+                  <span>목넘김</span>
+                  <div class="bar">
+                    <div class="value" data-value="3"></div>
+                  </div>
+                </li>
+                <li class="weight">
+                  <span>무게감</span>
+                  <div class="bar">
+                    <div class="value" data-value="4"></div>
+                  </div>
+                </li>
+                <li class="cooling">
+                  <span>쿨링감</span>
+                  <div class="bar">
+                    <div class="value" data-value="6"></div>
+                  </div>
+                </li>
+              </ul>
             </div>
           </div>
           <div class="conFlavor-imgs">
@@ -268,6 +568,9 @@
           <p class="promise">10년간의 노하우가 담긴 최상급의 품질을 제공해드리겠습니다</p>
           <button>Contact Us</button>
         </div>
+        <footer>
+          <p>COPYRIGHT ⓒ WORLD INTERNATIONAL. All Rights Reserved.</p>
+        </footer>
       </div>
     </div>
   </div>
