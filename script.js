@@ -27,8 +27,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
         scrollTrigger: {
             trigger: '.conMain-products',
             start: '0 top',
-            end: '600px bottom',
-            scrub: 2,
+            end: '600 bottom',
+            scrub: 1,
             markers: true,
             invalidateOnRefresh: true,
             // fastScrollEnd: true,
@@ -44,9 +44,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
     const tl2 = gsap.timeline({
         scrollTrigger: {
             trigger: '.conMain-products',
-            start: '600px top',
+            start: '700 top',
             end: '1200 bottom',
-            scrub: 2,
+            scrub: 1,
             markers: true,
             invalidateOnRefresh: true,
         },
@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
             trigger: '.conMain-text',
             start: '1600 top',
             end: '5400 bottom',
-            scrub: 2,
+            scrub: 1,
             markers: true,
             invalidateOnRefresh: true,
         },
@@ -214,9 +214,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
     const tl5 = gsap.timeline({
         scrollTrigger: {
             trigger: '.conMain-products2',
-            start: '8400 top',
-            end: '11400 bottom',
-            scrub: 2,
+            start: '10000 top',
+            end: '14400 bottom',
+            scrub: 1,
             markers: true,
             invalidateOnRefresh: true,
         },
@@ -266,9 +266,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
     const tl6 = gsap.timeline({
         scrollTrigger: {
             trigger: '.conQuality-bestQuality',
-            start: '13000 top',
-            end: '14500 bottom',
-            scrub: 2,
+            start: '15000 top',
+            end: '17500 bottom',
+            scrub: 1,
             markers: true,
             invalidateOnRefresh: true,
         },
@@ -313,9 +313,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
     const tl7 = gsap.timeline({
         scrollTrigger: {
             trigger: '.conQuality-text1',
-            start: '14500 top',
-            end: '16500 bottom',
-            scrub: 2,
+            start: '16500 top',
+            end: '18500 bottom',
+            scrub: 1,
             markers: true,
             invalidateOnRefresh: true,
         },
@@ -334,9 +334,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
     const tl8 = gsap.timeline({
         scrollTrigger: {
             trigger: '.conQuality-bg.orange',
-            start: '17000 top',
-            end: '17500 bottom',
-            scrub: 2,
+            start: '19500 top',
+            end: '21500 bottom',
+            scrub: 1,
             markers: true,
             invalidateOnRefresh: true,
         },
@@ -353,9 +353,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
     const tl9 = gsap.timeline({
         scrollTrigger: {
             trigger: '.conQuality-bg.purple',
-            start: '19000 top',
-            end: '19500 bottom',
-            scrub: 2,
+            start: '22500 top',
+            end: '24500 bottom',
+            scrub: 1,
             markers: true,
             invalidateOnRefresh: true,
         },
@@ -378,9 +378,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
     const tl10 = gsap.timeline({
         scrollTrigger: {
             trigger: '.conQuality-text4',
-            start: '21000 top',
-            end: '25000 bottom',
-            scrub: 2,
+            start: '25500 top',
+            end: '30500 bottom',
+            scrub: 1,
             markers: true,
             invalidateOnRefresh: true,
         },
@@ -429,9 +429,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
     const tl11 = gsap.timeline({
         scrollTrigger: {
             trigger: '.conQuality-experts',
-            start: '25500 top',
-            end: '29000 bottom',
-            scrub: 2,
+            start: '31500 top',
+            end: '33500 bottom',
+            scrub: 1,
             markers: true,
             invalidateOnRefresh: true,
         },
@@ -477,9 +477,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
     const tl12 = gsap.timeline({
         scrollTrigger: {
             trigger: '.conFlavor',
-            start: '30000 top',
-            end: '30500 bottom',
-            scrub: 2,
+            start: '34500 top',
+            end: '36500 bottom',
+            scrub: 1,
             markers: true,
             // invalidateOnRefresh: true, 설정하면 안보임
         },
@@ -499,9 +499,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
     const tl13 = gsap.timeline({
       scrollTrigger: {
           trigger: '.conAboutUs',
-          start: '35000 top',
-          end: '42000 bottom',
-          scrub: 2,
+          start: '37500 top',
+          end: '45000 bottom',
+          scrub: 1,
           markers: true,
           invalidateOnRefresh: true,
       },
@@ -676,6 +676,10 @@ document.addEventListener("DOMContentLoaded", (event) => {
     const topBtn = document.querySelector(".conAboutUs .topBtn");
     topBtn.addEventListener("click", () => {
         scrollToTop(0);
+        // 모든 스크롤트리거 초기화
+        ScrollTrigger.clearScrollMemory();
+
+       
     });
 
 
