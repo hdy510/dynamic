@@ -400,7 +400,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     }, 
     "<")
     .to('.conQuality-text4', {
-        marginLeft: '-18vw'
+        marginLeft: '-19vw'
     })
     .to('.conQuality-text3 .detail', {
         opacity: 0,
@@ -430,7 +430,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         scrollTrigger: {
             trigger: '.conQuality-experts',
             start: '31500 top',
-            end: '33500 bottom',
+            end: '35500 bottom',
             scrub: 1,
             markers: true,
             invalidateOnRefresh: true,
@@ -477,8 +477,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
     const tl12 = gsap.timeline({
         scrollTrigger: {
             trigger: '.conFlavor',
-            start: '34500 top',
-            end: '36500 bottom',
+            start: '36500 top',
+            end: '38500 bottom',
             scrub: 1,
             markers: true,
             // invalidateOnRefresh: true, 설정하면 안보임
@@ -499,8 +499,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
     const tl13 = gsap.timeline({
       scrollTrigger: {
           trigger: '.conAboutUs',
-          start: '37500 top',
-          end: '45000 bottom',
+          start: '39500 top',
+          end: '47000 bottom',
           scrub: 1,
           markers: true,
           invalidateOnRefresh: true,
@@ -525,6 +525,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
     .to(".conAboutUs-descriptionBox button", {
       opacity: 1,
     })
+    .to(".conAboutUs .topBtn", {
+        opacity: 1,
+      })
     .to(".conAboutUs footer", {
       opacity: 1,
     })
@@ -679,7 +682,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         // 모든 스크롤트리거 초기화
         ScrollTrigger.clearScrollMemory();
 
-       
+        // 기존 애니메이션 초기화
     });
 
 
