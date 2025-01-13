@@ -82,6 +82,19 @@ body {
   display: flex;
   justify-content: center;
 }
+@media (max-width: 768px) {
+  .warningBox p {
+    font-size: 18px;
+  }
+}
+@media (max-width: 450px) {
+  .warningBox {
+    padding: 10px;
+  }
+  .warningBox p {
+    font-size: 16px;
+  }
+}
 /* header 설정 */
 header {
   width: 100%;
@@ -113,7 +126,35 @@ header nav > div {
   font-family: var(--font-family-hemi-head-bd-it);
   cursor: pointer;
 }
-
+@media (max-width: 768px) {
+  header {
+    padding: 16px;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+  }
+  header h1 {
+    margin-bottom: 10px;
+  }
+  header h1 a img {
+    width: 150px;
+  }
+  header nav {
+    gap: 30px;
+  }
+  header nav > div {
+    font-size: 16px;
+    padding: 4px 8px;
+  }
+}
+@media (max-width: 450px) {
+  header nav {
+    gap: 8px;
+  }
+  header nav > div {
+    font-size: 15px;
+  }
+}
 
 /* .viewport 설정 */
 .viewport {
@@ -172,6 +213,22 @@ header nav > div {
   width: 2.4vw;
   animation: scrollDown 1s infinite alternate;
 }
+@media (max-width: 768px) {
+ .scrollDown {
+  height: 70px;
+  gap: 10px;
+ }
+ .scrollDown p {
+  font-size: 20px;
+ }
+ .scrollDown img {
+  width: 30px;
+ }
+}
+@media (max-width: 450px) {
+  
+}
+
 
 .conMain-ellipseBox {
   width: 10vw;

@@ -22,6 +22,52 @@ document.addEventListener("DOMContentLoaded", (event) => {
     });
 
 
+
+
+    // [반응형 설정]
+    const mediaQueryTablet = window.matchMedia("(max-width: 768px)");
+    const mediaQueryMobile = window.matchMedia("(max-width: 450px)");
+    mediaQueryTablet.addEventListener("change", () => {
+    if (mediaQueryTablet.matches) {
+        // 화면이 768px 이하일 때 애니메이션을 적용
+        gsap.to(".my-element", {
+        opacity: 0,
+        scrollTrigger: {
+            ...scrollTriggerSettings
+        }
+        });
+    } else {
+        // 화면이 768px보다 클 때 애니메이션을 적용
+        gsap.to(".my-element", {
+        opacity: 1,
+        scrollTrigger: {
+            ...scrollTriggerSettings
+        }
+        });
+    }
+    });
+    
+    // 초기 브레이크포인트 설정
+    if (mediaQueryTablet.matches) {
+    gsap.to(".my-element", {
+        opacity: 0,
+        scrollTrigger: {
+        ...scrollTriggerSettings
+        }
+    });
+    } else {
+    gsap.to(".my-element", {
+        opacity: 1,
+        scrollTrigger: {
+        ...scrollTriggerSettings
+        }
+    });
+    }
+
+
+
+
+
     // 1. 1스크롤에 블러 제품 이미지 확대
     const tl1 = gsap.timeline({
         scrollTrigger: {
