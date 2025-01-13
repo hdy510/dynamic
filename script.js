@@ -8,12 +8,26 @@ document.addEventListener("DOMContentLoaded", (event) => {
       window.scrollTo(0, 0); // 스크롤 맨 위로 이동
     });
 
+    window.addEventListener("scroll", () => {
+        const sc = window.scrollY;
+        console.log(sc);
+           // 0. scrollDown 스크롤탑 50 이하에서만 보이기
+        if (sc > 10) {
+            document.querySelector(".scrollDown").style.visibility = "hidden";
+            document.querySelector(".scrollDown").style.opacity = "0";
+        } else {
+            document.querySelector(".scrollDown").style.visibility = "visible";
+            document.querySelector(".scrollDown").style.opacity = "1";
+        }
+    });
+
+
     // 1. 1스크롤에 블러 제품 이미지 확대
     const tl1 = gsap.timeline({
         scrollTrigger: {
             trigger: '.conMain-products',
             start: '0 top',
-            end: '600 bottom',
+            end: '600px bottom',
             scrub: 2,
             markers: true,
             invalidateOnRefresh: true,
@@ -30,7 +44,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     const tl2 = gsap.timeline({
         scrollTrigger: {
             trigger: '.conMain-products',
-            start: '600 top',
+            start: '600px top',
             end: '1200 bottom',
             scrub: 2,
             markers: true,
@@ -187,7 +201,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         console.log(sc);
         if (sc > 7000) {
             gsap.to(puffCounter, {
-                var: 5000,
+                var: 10000,
                 duration: 1,
                 onUpdate: function () {
                     count.innerHTML = Math.ceil(puffCounter.var);
@@ -280,7 +294,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         )
         .to('.conQuality-bestQuality', {
             opacity: 1,
-            top: '25%',
+            top: '32%',
             transform: 'translate(-50%, -50%) scale(0.3)',
         })
         .to(
@@ -373,34 +387,43 @@ document.addEventListener("DOMContentLoaded", (event) => {
     });
     tl10.to('.conQuality-text3', {
         // x: "26.8vw",
-        y: '-1vw',
-        opacity: 0,
+        // y: '-1vw',
+        // opacity: 0,
+        y: '-16vw',
     })
-        .to(
-            '.conQuality-text4 .imgBox img',
-            {
-                opacity: 1,
-                stagger: 1,
-                scale: 1,
+    .fromTo('.conQuality-text4 .imgBox', {
+        opacity: 0,
+        y: '16vw',
+    }, {
+        opacity: 1,
+        y: '0',
+    }, 
+    "<")
+    .to('.conQuality-text4', {
+        marginLeft: '-18vw'
+    })
+    .to('.conQuality-text3 .detail', {
+        opacity: 0,
+    }, "<")
+    .fromTo(
+        '.conQuality-text4 .detail span',
+        {
+            // opacity: 0,
+            // rotation: -65,
+            // y: "1vw",
+            // scale: 0.5,
+            opacity: 0,
+        },
+        {
+            stagger: {
+                each: 0.06,
             },
-            '<'
-        )
-        .fromTo(
-            '.conQuality-text4 .detail span',
-            {
-                opacity: 0,
-                rotation: -65,
-                // y: "1vw",
-                scale: 0.5,
-            },
-            {
-                stagger: 1,
-                opacity: 1,
-                rotation: 0,
-                y: 0,
-                scale: 1,
-            }
-        );
+            rotation: 0,
+            y: 0,
+            scale: 1,
+            opacity: 1,
+        }
+    );
 
     // 11. conQuality-experts 등장
     const tl11 = gsap.timeline({
@@ -576,6 +599,31 @@ document.addEventListener("DOMContentLoaded", (event) => {
     });
 
 
+    // [swiper 각 슬라이드 클릭 시 active 상태로 변경]
+    let swiperSlides = document.querySelectorAll('.conFlavor .conFlavor-imgs .swiper-slide');
+    swiperSlides.forEach((slide, index) => {
+        slide.addEventListener("click", (event) => {
+            // 클릭된 슬라이드의 인덱스 가져오기
+            const slideIndex = index;
+
+            // 해당 슬라이드로 이동
+            swiper.slideToLoop(slideIndex);
+
+            // 모든 슬라이드에서 active 클래스 제거
+            swiperSlides.forEach(slide => {
+                slide.classList.remove("swiper-slide-active");
+            });
+            // 클릭한 슬라이드에 active 클래스 추가
+            slide.classList.add("swiper-slide-active");
+
+            // 해당하는 맛 설명으로 변화
+            const clickedSlide = event.currentTarget;
+            const clickedFlavor = clickedSlide.getAttribute('data-flavor');
+            updateDescription(clickedFlavor);
+        });
+    });
+
+
 
 
 
@@ -585,37 +633,50 @@ document.addEventListener("DOMContentLoaded", (event) => {
   const flavorMenu = document.querySelector('header nav div:nth-child(3)');
   const aboutUsMenu = document.querySelector('header nav div:nth-child(4)');
 
+  const transitionBox = document.querySelector(".transitionBox");
+  function scrollToTop (destination) {
+    transitionBox.style.visibility = "visible";
+    transitionBox.style.opacity = "1";
+    setTimeout(() => {
+        window.scrollTo({
+          top: destination,
+          behavior: "smooth" // 부드럽게 스크롤 이동
+        });
+      }, 500);
+      setTimeout(() => {
+          transitionBox.style.opacity = "0";
+      }, 1500);
+      setTimeout(() => {
+        transitionBox.style.visibility = "hidden";
+      }, 2000);
+  }
   // mainMenu 클릭 시 스크롤 위치 이동
   mainMenu.addEventListener("click", () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth" // 부드럽게 스크롤 이동
-    });
+    scrollToTop(0);
   });
 
   // qualityMenu 클릭 시 스크롤 위치 이동
   qualityMenu.addEventListener("click", () => {
-    window.scrollTo({
-      top: 16500,
-      behavior: "smooth"
-    });
+    scrollToTop(16000);
   });
 
   // flavorMenu 클릭 시 스크롤 위치 이동
   flavorMenu.addEventListener("click", () => {
-    window.scrollTo({
-      top: 30700,
-      behavior: "smooth"
-    });
+    scrollToTop(30500);
   });
 
   // aboutUsMenu 클릭 시 스크롤 위치 이동
   aboutUsMenu.addEventListener("click", () => {
-    window.scrollTo({
-      top: 41000,
-      behavior: "smooth"
-    });
+    scrollToTop(40000);
   });
+  
+
+
+    // [top 버튼 클릭 시 상단으로 이동]
+    const topBtn = document.querySelector(".conAboutUs .topBtn");
+    topBtn.addEventListener("click", () => {
+        scrollToTop(0);
+    });
 
 
 });

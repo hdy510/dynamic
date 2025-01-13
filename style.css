@@ -129,6 +129,49 @@ header nav > div {
   height: 100vh;
   position: relative;
 }
+/* transitionBox 설정 */
+.transitionBox {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--color-black-main);
+  z-index: 60;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+/* scrollDown 설정 */
+.scrollDown {
+  position: absolute;
+  width: 100%;
+  height: 5vw;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4vw;
+  opacity: 1;
+  transition: all 0.5s;
+}
+.scrollDown p {
+  font-size: 1.4vw;
+  font-family: var(--font-family-hemi-head-bd-it);
+}
+@keyframes scrollDown {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(0.6vw);
+  }
+}
+.scrollDown img {
+  width: 2.4vw;
+  animation: scrollDown 1s infinite alternate;
+}
 
 .conMain-ellipseBox {
   width: 10vw;
@@ -219,11 +262,11 @@ header nav > div {
 .conMain-text3 .count b {
   font-family: var(--font-family-pretendard-bold);
   color: #11D96B;
-  font-size: 6vw;
+  font-size: 6.1vw;
 }
 .conMain-text3 .count span {
   font-family: var(--font-family-pretendard-bold);
-  font-size: 3.4vw;
+  font-size: 2.6vw;
 }
 .conMain-text3 .title {
   font-family: var(--font-family-pretendard-bold);
@@ -364,7 +407,7 @@ header nav > div {
  }
  .conQuality-text1 {
   position: absolute;
-  top: 55%;
+  top: 56%;
   left: 50%;
   transform: translate(-50%, -50%);
   display: flex;
@@ -433,36 +476,42 @@ header nav > div {
   opacity: 1;
  }
  .conQuality-text4 {
-  width: 65%;
+  /* width: 65%; */
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 2vw;
+  /* gap: 2vw; */
  }
  .conQuality-text4 .imgBox {
   display: flex;
   flex-wrap: wrap;
-  width: 25vw;
+  width: 24vw;
  }
  .conQuality-text4 .imgBox img {
   width: 50%;
-  opacity: 0;
-  transform: scale(0);
+  /* opacity: 0;
+  transform: scale(0); */
  }
  .conQuality-text4 .detail {
-  
+  width: 39.8vw;
+  position: absolute;
+  left: calc(100% + 2vw);
  }
  .conQuality-text4 .detail span {
-  font-size: 3vw;
+  font-size: 6.4vw;
   font-family: var(--font-family-pretendard-bold);
   opacity: 0;
   display: inline-block;
+  margin: 0.5vw 0;
+
  }
  .conQuality-text4 .detail span:nth-child(4), span:nth-child(6), span:nth-child(11), span:nth-child(14) {
+  /* margin-right: 0.8vw; */
+ }
+ .conQuality-text4 .detail span:nth-child(16) {
   margin-right: 0.8vw;
  }
  .conQuality-experts {
@@ -625,7 +674,7 @@ header nav > div {
   color: #E60041;
 }
 .conFlavor-description .list p {
-  font-size: 1.2vw;
+  font-size: 1vw;
   font-family: var(--font-family-pretendard-medium);
   margin-bottom: 3vw;
 }
@@ -808,6 +857,22 @@ header nav > div {
   background-color: #fff;
   color: var(--color-world-international);
 }
+.conAboutUs .topBtn {
+  position: absolute;
+  bottom: 3vw;
+  right: 3vw;
+  width: 4vw;
+  height: 4vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+.conAboutUs .topBtn:hover {
+  transform: translateY(-0.6vw);
+}
+.conAboutUs .topBtn img {}
 .conAboutUs footer {
   position: absolute;
   bottom: 0;
