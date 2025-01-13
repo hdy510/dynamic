@@ -82,12 +82,12 @@ body {
   display: flex;
   justify-content: center;
 }
-@media (max-width: 768px) {
+@media (max-width: 1280px) {
   .warningBox p {
     font-size: 18px;
   }
 }
-@media (max-width: 450px) {
+@media (max-width: 640px) {
   .warningBox {
     padding: 10px;
   }
@@ -126,7 +126,7 @@ header nav > div {
   font-family: var(--font-family-hemi-head-bd-it);
   cursor: pointer;
 }
-@media (max-width: 768px) {
+@media (max-width: 1280px) {
   header {
     padding: 16px;
     flex-direction: column;
@@ -140,14 +140,14 @@ header nav > div {
     width: 150px;
   }
   header nav {
-    gap: 30px;
+    gap: 40px;
   }
   header nav > div {
-    font-size: 16px;
+    font-size: 18px;
     padding: 4px 8px;
   }
 }
-@media (max-width: 450px) {
+@media (max-width: 640px) {
   header nav {
     gap: 8px;
   }
@@ -213,7 +213,7 @@ header nav > div {
   width: 2.4vw;
   animation: scrollDown 1s infinite alternate;
 }
-@media (max-width: 768px) {
+@media (max-width: 1280px) {
  .scrollDown {
   height: 70px;
   gap: 10px;
@@ -225,7 +225,7 @@ header nav > div {
   width: 30px;
  }
 }
-@media (max-width: 450px) {
+@media (max-width: 640px) {
   
 }
 

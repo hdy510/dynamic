@@ -25,103 +25,276 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
 
     // [반응형 설정]
-    const mediaQueryTablet = window.matchMedia("(max-width: 768px)");
-    const mediaQueryMobile = window.matchMedia("(max-width: 450px)");
-    mediaQueryTablet.addEventListener("change", () => {
-    if (mediaQueryTablet.matches) {
-        // 화면이 768px 이하일 때 애니메이션을 적용
-        gsap.to(".my-element", {
-        opacity: 0,
-        scrollTrigger: {
-            ...scrollTriggerSettings
+    const mediaQueryTablet = window.matchMedia("(max-width: 1280px)");
+    const mediaQueryMobile = window.matchMedia("(max-width: 640px)");
+
+    function setScrollTrigger() {
+        if (mediaQueryMobile.matches) {
+            // ##########################모바일 구간
+            //  1. 1스크롤에 블러 제품 이미지 확대
+            const tl1 = gsap.timeline({
+                scrollTrigger: {
+                    trigger: '.conMain-products',
+                    start: '0 top',
+                    end: '600 bottom',
+                    scrub: 1,
+                    markers: true,
+                    invalidateOnRefresh: true,
+                },
+            });
+            tl1.to('.conMain-products', {
+                scale: 2.2,
+                opacity: 1,
+                filter: 'blur(0px)',
+            });
+
+            // 2. 1스크롤에 핑크타원, be more, dynamic 텍스트 등장
+            const tl2 = gsap.timeline({
+                scrollTrigger: {
+                    trigger: '.conMain-products',
+                    start: '700 top',
+                    end: '1200 bottom',
+                    scrub: 1,
+                    markers: true,
+                    invalidateOnRefresh: true,
+                },
+            });
+            tl2.set('.conMain-ellipseBox', {
+                borderRadius: '50%',
+                rotate: '-15deg',
+                width: '150px',
+                height: '75px',
+            })
+                .to('.conMain-ellipseBox', {
+                    width: '250%',
+                    height: '150%',
+                    opacity: 1,
+                })
+                .to(
+                    '.conMain-text.beMore',
+                    {
+                        right: '8vw',
+                    },
+                    '<'
+                )
+                .to(
+                    '.conMain-text.dynamic',
+                    {
+                        left: '8vw',
+                    },
+                    '<'
+                );
+
+
+
+
+
+
+
+
+
+
+
+
+
+        } else if (mediaQueryTablet.matches) {
+            // ##########################태블릿 구간
+            //  1. 1스크롤에 블러 제품 이미지 확대
+            const tl1 = gsap.timeline({
+                scrollTrigger: {
+                    trigger: '.conMain-products',
+                    start: '0 top',
+                    end: '600 bottom',
+                    scrub: 1,
+                    markers: true,
+                    invalidateOnRefresh: true,
+                },
+            });
+            tl1.to('.conMain-products', {
+                scale: 1.3,
+                opacity: 1,
+                filter: 'blur(0px)',
+            });
+
+            // 2. 1스크롤에 핑크타원, be more, dynamic 텍스트 등장
+            const tl2 = gsap.timeline({
+                scrollTrigger: {
+                    trigger: '.conMain-products',
+                    start: '700 top',
+                    end: '1200 bottom',
+                    scrub: 1,
+                    markers: true,
+                    invalidateOnRefresh: true,
+                },
+            });
+            tl2.set('.conMain-ellipseBox', {
+                borderRadius: '50%',
+                rotate: '-15deg',
+                width: '150px',
+                height: '75px',
+            })
+                .to('.conMain-ellipseBox', {
+                    width: '250%',
+                    height: '150%',
+                    rotate: '-15deg',
+                    transformOrigin: 'center center',
+                    opacity: 1,
+                })
+                .fromTo(
+                    '.conMain-text.beMore',
+                    {
+                        right: '100%',
+                        top: '15%',
+                    },
+                    {
+                        right: '8vw',
+                        top: '15%',
+                    },
+                    '<'
+                )
+                .fromTo(
+                    '.conMain-text.dynamic',
+                    {
+                        left: '100%',
+                        bottom: '9%',
+                    },
+                    {
+                        left: '8vw',
+                        bottom: '9%',
+                    },
+                    '<'
+                );
+
+
+
+
+
+
+
+
+
+
+
+
+
+        } else {
+            // ##########################데스크탑 구간
+            //  1. 1스크롤에 블러 제품 이미지 확대
+            const tl1 = gsap.timeline({
+                scrollTrigger: {
+                    trigger: '.conMain-products',
+                    start: '0 top',
+                    end: '600 bottom',
+                    scrub: 1,
+                    markers: true,
+                    invalidateOnRefresh: true,
+                },
+            });
+            tl1.to('.conMain-products', {
+                scale: 1,
+                opacity: 1,
+                filter: 'blur(0px)',
+            });
+
+            // 2. 1스크롤에 핑크타원, be more, dynamic 텍스트 등장
+            const tl2 = gsap.timeline({
+                scrollTrigger: {
+                    trigger: '.conMain-products',
+                    start: '700 top',
+                    end: '1200 bottom',
+                    scrub: 1,
+                    markers: true,
+                    invalidateOnRefresh: true,
+                },
+            });
+            tl2.set('.conMain-ellipseBox', {
+                borderRadius: '50%',
+                rotate: '-15deg',
+                width: '10vw',
+                height: '5vw',
+            })
+                .to('.conMain-ellipseBox', {
+                    width: '180vw',
+                    height: '180vh',
+                    opacity: 1,
+                })
+                .to(
+                    '.conMain-text.beMore',
+                    {
+                        right: '8vw',
+                    },
+                    '<'
+                )
+                .to(
+                    '.conMain-text.dynamic',
+                    {
+                        left: '8vw',
+                    },
+                    '<'
+                );
+
+
+
+
+
+
+
+
+
+
+
+
         }
-        });
-    } else {
-        // 화면이 768px보다 클 때 애니메이션을 적용
-        gsap.to(".my-element", {
-        opacity: 1,
-        scrollTrigger: {
-            ...scrollTriggerSettings
-        }
-        });
     }
-    });
-    
+
     // 초기 브레이크포인트 설정
-    if (mediaQueryTablet.matches) {
-    gsap.to(".my-element", {
-        opacity: 0,
-        scrollTrigger: {
-        ...scrollTriggerSettings
-        }
-    });
-    } else {
-    gsap.to(".my-element", {
-        opacity: 1,
-        scrollTrigger: {
-        ...scrollTriggerSettings
-        }
-    });
-    }
+    setScrollTrigger();
+
+    // 브레이크포인트 변경 시 효과 재적용
+    mediaQueryTablet.addEventListener("change", setScrollTrigger);
+    mediaQueryMobile.addEventListener("change", setScrollTrigger);
 
 
 
 
 
-    // 1. 1스크롤에 블러 제품 이미지 확대
-    const tl1 = gsap.timeline({
-        scrollTrigger: {
-            trigger: '.conMain-products',
-            start: '0 top',
-            end: '600 bottom',
-            scrub: 1,
-            markers: true,
-            invalidateOnRefresh: true,
-            // fastScrollEnd: true,
-        },
-    });
-    tl1.to('.conMain-products', {
-        scale: 1,
-        opacity: 1,
-        filter: 'blur(0px)',
-    });
 
-    // 2. 1스크롤에 핑크타원, be more, dynamic 텍스트 등장
-    const tl2 = gsap.timeline({
-        scrollTrigger: {
-            trigger: '.conMain-products',
-            start: '700 top',
-            end: '1200 bottom',
-            scrub: 1,
-            markers: true,
-            invalidateOnRefresh: true,
-        },
-    });
-    tl2.set('.conMain-ellipseBox', {
-        borderRadius: '50%',
-        rotate: '-15deg',
-        width: '10vw',
-        height: '5vw',
-    })
-        .to('.conMain-ellipseBox', {
-            width: '180vw',
-            height: '180vh',
-            opacity: 1,
-        })
-        .to(
-            '.conMain-text.beMore',
-            {
-                right: '8vw',
-            },
-            '<'
-        )
-        .to(
-            '.conMain-text.dynamic',
-            {
-                left: '8vw',
-            },
-            '<'
-        );
+    // // 2. 1스크롤에 핑크타원, be more, dynamic 텍스트 등장
+    // const tl2 = gsap.timeline({
+    //     scrollTrigger: {
+    //         trigger: '.conMain-products',
+    //         start: '700 top',
+    //         end: '1200 bottom',
+    //         scrub: 1,
+    //         markers: true,
+    //         invalidateOnRefresh: true,
+    //     },
+    // });
+    // tl2.set('.conMain-ellipseBox', {
+    //     borderRadius: '50%',
+    //     rotate: '-15deg',
+    //     width: '10vw',
+    //     height: '5vw',
+    // })
+    //     .to('.conMain-ellipseBox', {
+    //         width: '180vw',
+    //         height: '180vh',
+    //         opacity: 1,
+    //     })
+    //     .to(
+    //         '.conMain-text.beMore',
+    //         {
+    //             right: '8vw',
+    //         },
+    //         '<'
+    //     )
+    //     .to(
+    //         '.conMain-text.dynamic',
+    //         {
+    //             left: '8vw',
+    //         },
+    //         '<'
+    //     );
 
     // 3. 1스크롤에 be more, dynamic 텍스트 사라짐, 핑크 납작해짐, 기기 사라짐
     const tl3 = gsap.timeline({
