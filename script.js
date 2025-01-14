@@ -1,12 +1,15 @@
 // use a script tag or an external JS file
 document.addEventListener("DOMContentLoaded", (event) => {
     gsap.registerPlugin(ScrollTrigger);
+    gsap.registerPlugin(ScrollToPlugin);
+
+
     ScrollTrigger.clearScrollMemory();
     // 페이지 새로고침 후에도 스크롤을 맨 위로 초기화
-    // window.addEventListener("beforeunload", () => {
-    //   ScrollTrigger.clearScrollMemory();
-    //   window.scrollTo(0, 0); // 스크롤 맨 위로 이동
-    // });
+    window.addEventListener("beforeunload", () => {
+      ScrollTrigger.clearScrollMemory();
+      window.scrollTo(0, 0); // 스크롤 맨 위로 이동
+    });
 
     window.addEventListener("scroll", () => {
         const sc = window.scrollY;
@@ -74,12 +77,12 @@ document.addEventListener("DOMContentLoaded", (event) => {
                     '.conMain-text.beMore',
                     {
                         right: '100%',
-                        top: '30%',
+                        top: '20%',
                         width: '300px',
                     },
                     {
                         right: '8vw',
-                        top: '30%',
+                        top: '20%',
                         width: '300px',
                     },
                     '<'
@@ -88,12 +91,12 @@ document.addEventListener("DOMContentLoaded", (event) => {
                     '.conMain-text.dynamic',
                     {
                         left: '100%',
-                        bottom: '30%',
+                        bottom: '19%',
                         width: '300px',
                     },
                     {
                         left: '8vw',
-                        bottom: '30%',
+                        bottom: '19%',
                         width: '300px',
                     },
                     '<'
@@ -1142,11 +1145,11 @@ document.addEventListener("DOMContentLoaded", (event) => {
                 width: '10vw',
                 height: '5vw',
             })
-                .to('.conMain-ellipseBox', {
-                    width: '180vw',
-                    height: '180vh',
-                    opacity: 1,
-                })
+            .to('.conMain-ellipseBox', {
+                width: '180vw',
+                height: '180vh',
+                opacity: 1,
+            })
                 .to(
                     '.conMain-text.beMore',
                     {
@@ -1663,7 +1666,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         breakpoints: {
             0: {
               slidesPerView: 2,
-              spaceBetween: 10,
+              spaceBetween: 0,
               centeredSlides: true,
             },
             640: {
@@ -1765,22 +1768,49 @@ document.addEventListener("DOMContentLoaded", (event) => {
   const aboutUsMenu = document.querySelector('header nav div:nth-child(4)');
 
   const transitionBox = document.querySelector(".transitionBox");
-  function scrollToTop (destination) {
+
+  // 스크롤탑 이동 함수 
+//   function scrollToTop (destination) {
+//     transitionBox.style.visibility = "visible";
+//     transitionBox.style.opacity = "1";
+//     setTimeout(() => {
+//         window.scrollTo({
+//           top: destination,
+//           behavior: "smooth" // 부드럽게 스크롤 이동
+//         });
+//       }, 1000);
+//       setTimeout(() => {
+//           transitionBox.style.opacity = "0";
+//       }, 1500);
+//       setTimeout(() => {
+//         transitionBox.style.visibility = "hidden";
+//       }, 2000);
+//   }
+function scrollToTop(destination) {
     transitionBox.style.visibility = "visible";
     transitionBox.style.opacity = "1";
+
     setTimeout(() => {
-        window.scrollTo({
-          top: destination,
-          behavior: "smooth" // 부드럽게 스크롤 이동
+        gsap.to(window, {
+            scrollTo: {
+                y: destination,
+                autoKill: false, // 다른 스크롤 이벤트 방지
+            },
+            duration: 1.2, // 스크롤 시간을 조정 (단위: 초)
+            ease: "power2.out", // 부드러운 이징 적용
         });
-      }, 500);
-      setTimeout(() => {
-          transitionBox.style.opacity = "0";
-      }, 1500);
-      setTimeout(() => {
+    }, 1000);
+
+    setTimeout(() => {
+        transitionBox.style.opacity = "0";
+    }, 2500);
+
+    setTimeout(() => {
         transitionBox.style.visibility = "hidden";
-      }, 2000);
-  }
+    }, 3000);
+}
+
+
   // mainMenu 클릭 시 스크롤 위치 이동
   mainMenu.addEventListener("click", () => {
     scrollToTop(0);
@@ -1788,17 +1818,44 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
   // qualityMenu 클릭 시 스크롤 위치 이동
   qualityMenu.addEventListener("click", () => {
-    scrollToTop(16000);
+    if (mediaQueryMobile.matches) {
+        // 모바일에서
+        scrollToTop(24000);
+    } else if (mediaQueryTablet.matches) {
+        // 태블릿에서
+        scrollToTop(18000);
+    } else {
+        // 데스크탑에서
+        scrollToTop(18000);
+    }
   });
 
   // flavorMenu 클릭 시 스크롤 위치 이동
   flavorMenu.addEventListener("click", () => {
-    scrollToTop(30500);
+    if (mediaQueryMobile.matches) {
+        // 모바일에서
+        scrollToTop(41000);
+    } else if (mediaQueryTablet.matches) {
+        // 태블릿에서
+        scrollToTop(41000);
+    } else {
+        // 데스크탑에서
+        scrollToTop(38000);
+    }
   });
 
   // aboutUsMenu 클릭 시 스크롤 위치 이동
   aboutUsMenu.addEventListener("click", () => {
-    scrollToTop(40000);
+    if (mediaQueryMobile.matches) {
+        // 모바일에서
+        scrollToTop(56000);
+    } else if (mediaQueryTablet.matches) {
+        // 태블릿에서
+        scrollToTop(50000);
+    } else {
+        // 데스크탑에서
+        scrollToTop(47000);
+    }
   });
   
 
@@ -1810,7 +1867,11 @@ document.addEventListener("DOMContentLoaded", (event) => {
         // 모든 스크롤트리거 초기화
         ScrollTrigger.clearScrollMemory();
 
-        // 기존 애니메이션 초기화
+        // puffCounter 초기화 및 UI 업데이트
+        puffCounter.var = 0;
+        
+
+        
     });
 
 

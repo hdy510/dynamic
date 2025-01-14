@@ -193,6 +193,29 @@ header nav > div {
   opacity: 0;
   transition: opacity 0.5s ease;
 }
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.transitionBox img {
+  position: absolute;
+  width: 2vw;
+  height: 2vw;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: rotate 1s linear infinite;
+}
+@media (max-width: 1280px) {
+  .transitionBox img {
+    width: 30px;
+    height: 30px;
+  }
+}
 
 /* scrollDown 설정 */
 .scrollDown {
@@ -249,6 +272,7 @@ header nav > div {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) rotate(-15deg);
+  /* opacity: 0; */
   opacity: 0;
   transform-origin: center center;
 }
@@ -316,6 +340,9 @@ header nav > div {
   line-height: 1.5;
 }
 @media (max-width: 1280px) {
+  .conMain-products {
+    width: 180px;
+  }
   .conMain-centerBox {
     width: 100%;
     height: 100%;
@@ -336,6 +363,9 @@ header nav > div {
   }
 }
 @media (max-width: 640px) {
+  .conMain-products {
+    width: 120px;
+  }
   .conMain-centerBox {
     width: 90%;
     height: 100%;
@@ -1159,6 +1189,12 @@ header nav > div {
     bottom: -45%;
     left: 50%;
   }
+  .conQuality-experts img.imgExperts.index0 {
+    animation: experts0 8s linear infinite reverse;
+   }
+   .conQuality-experts img.imgExperts.index1 {
+     animation: experts1 8s linear infinite reverse;
+   }
   .conQuality-experts-text {
     left: 50%;
     width: 600px;
@@ -1440,7 +1476,7 @@ header nav > div {
 @media (max-width: 640px) {
   .conFlavor-title {
     font-size: 24px;
-    top: 16%;
+    top: 17%;
   }
   .conFlavor .conFlavor-description {
     top: 87%;
@@ -1451,25 +1487,41 @@ header nav > div {
     right: auto;
     left: 0;
   }
+  .conFlavor .conFlavor-imgs {
+    top: 24%;
+  }
+  .conFlavor .conFlavor-imgs .swiper {
+    padding-right: 0;
+  }
   .conFlavor .conFlavor-imgs .swiper-wrapper {
-
   }
   .conFlavor .conFlavor-imgs .swiper-slide {
     padding-top: 30px;
     padding-bottom: 50px;
+    transform: scale(1);
+  }
+  .conFlavor .conFlavor-imgs .swiper-slide img {
+    transform: scale(0.6);
   }
   .conFlavor .conFlavor-imgs .swiper-slide-active {
     display: flex;
     justify-content: center;
+    transform: scale(1);
+    margin: 0;
+
   }
   .conFlavor .conFlavor-imgs .swiper-slide-active img {
     transform: scale(1.4);
   }
   .conFlavor .conFlavor-imgs .swiper-slide .gradientBox {
-    /* background-color: #fff; */
-    height: 104px;
+    height: 60px;
     margin: 0 8px;
     z-index: 4;
+    bottom: 88px;
+  }
+  .conFlavor .conFlavor-imgs .swiper-slide-active .gradientBox {
+    bottom: 0px;
+    height: 110px;
   }
   .conFlavor .conFlavor-description {
     left: 40px;
@@ -1587,7 +1639,7 @@ header nav > div {
   }
   .conAboutUs-descriptionBox button {
     font-size: 18px;
-    padding: 10px 20px;
+    padding: 12px 20px;
     border-radius: 4px;
   }
 }
@@ -1602,6 +1654,7 @@ header nav > div {
   .conAboutUs-descriptionBox .promise {
     text-align: center;
     line-height: 1.8;
+    width: 220px;
   }
   .conAboutUs-descriptionBox button {
     padding: 14px 20px;
