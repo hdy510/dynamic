@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
           start: "0 top",
           end: "600 bottom",
           scrub: 1,
-          markers: true,
+        //   markers: true,
           invalidateOnRefresh: true,
         },
       });
@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
           start: "700 top",
           end: "1200 bottom",
           scrub: 1,
-          markers: true,
+        //   markers: true,
           invalidateOnRefresh: true,
         },
       });
@@ -111,7 +111,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
           start: "1600 top",
           end: "5400 bottom",
           scrub: 1,
-          markers: true,
+        //   markers: true,
           invalidateOnRefresh: true,
         },
       });
@@ -167,7 +167,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
           end: "10400 bottom",
           // scrub: 2,
           scrub: 1,
-          markers: true,
+        //   markers: true,
           invalidateOnRefresh: true,
         },
       });
@@ -235,7 +235,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
           end: "13400 bottom",
           // scrub: 2,
           scrub: 1,
-          markers: true,
+        //   markers: true,
           invalidateOnRefresh: true,
         },
       });
@@ -269,7 +269,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
           end: "18000 bottom",
           // scrub: 2,
           scrub: 1,
-          markers: true,
+        //   markers: true,
           invalidateOnRefresh: true,
         },
       });
@@ -294,7 +294,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
           start: "19000 top",
           end: "21500 bottom",
           scrub: 1,
-          markers: true,
+        //   markers: true,
           invalidateOnRefresh: true,
         },
       });
@@ -342,7 +342,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
           start: "21500 top",
           end: "24500 bottom",
           scrub: 1,
-          markers: true,
+        //   markers: true,
           invalidateOnRefresh: true,
         },
       });
@@ -365,7 +365,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
           start: "25500 top",
           end: "26700 bottom",
           scrub: 1,
-          markers: true,
+        //   markers: true,
           invalidateOnRefresh: true,
         },
       });
@@ -384,7 +384,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
           start: "27700 top",
           end: "28900 bottom",
           scrub: 1,
-          markers: true,
+        //   markers: true,
           invalidateOnRefresh: true,
         },
       });
@@ -411,7 +411,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
           start: "29000 top",
           end: "30000 bottom",
           scrub: 1,
-          markers: true,
+        //   markers: true,
           invalidateOnRefresh: true,
         },
       });
@@ -439,7 +439,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
           start: "30500 top",
           end: "31500 bottom",
           scrub: 1,
-          markers: true,
+        //   markers: true,
           invalidateOnRefresh: true,
         },
       });
@@ -484,7 +484,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
           start: "32000 top",
           end: "36500 bottom",
           scrub: 1,
-          markers: true,
+        //   markers: true,
           invalidateOnRefresh: true,
         },
       });
@@ -540,7 +540,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
           start: "38500 top",
           end: "41500 bottom",
           scrub: 1,
-          markers: true,
+        //   markers: true,
           // invalidateOnRefresh: true, 설정하면 안보임
         },
       });
@@ -563,7 +563,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
           start: "44500 top",
           end: "56000 bottom",
           scrub: 1,
-          markers: true,
+        //   markers: true,
           invalidateOnRefresh: true,
         },
       });
@@ -602,7 +602,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
           start: "0 top",
           end: "600 bottom",
           scrub: 1,
-          markers: true,
+        //   markers: true,
           invalidateOnRefresh: true,
         },
       });
@@ -619,7 +619,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
           start: "700 top",
           end: "1200 bottom",
           scrub: 1,
-          markers: true,
+        //   markers: true,
           invalidateOnRefresh: true,
         },
       });
@@ -673,7 +673,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
           start: "1600 top",
           end: "5400 bottom",
           scrub: 1,
-          markers: true,
+        //   markers: true,
           invalidateOnRefresh: true,
         },
       });
@@ -741,7 +741,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
           end: "8400 bottom",
           // scrub: 2,
           scrub: 1,
-          markers: true,
+        //   markers: true,
           invalidateOnRefresh: true,
         },
       });
@@ -807,7 +807,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
           start: "9400 top",
           end: "14400 bottom",
           scrub: 1,
-          markers: true,
+        //   markers: true,
           invalidateOnRefresh: true,
         },
       });
@@ -860,7 +860,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
           start: "15000 top",
           end: "17500 bottom",
           scrub: 1,
-          markers: true,
+        //   markers: true,
           invalidateOnRefresh: true,
         },
       });
@@ -908,7 +908,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
           start: "16500 top",
           end: "18500 bottom",
           scrub: 1,
-          markers: true,
+        //   markers: true,
           invalidateOnRefresh: true,
         },
       });
@@ -931,7 +931,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
           start: "19500 top",
           end: "21500 bottom",
           scrub: 1,
-          markers: true,
+        //   markers: true,
           invalidateOnRefresh: true,
         },
       });
@@ -950,7 +950,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
           start: "22500 top",
           end: "24500 bottom",
           scrub: 1,
-          markers: true,
+        //   markers: true,
           invalidateOnRefresh: true,
         },
       });
@@ -977,7 +977,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
           start: "25500 top",
           end: "30500 bottom",
           scrub: 1,
-          markers: true,
+        //   markers: true,
           invalidateOnRefresh: true,
         },
       });
@@ -1041,7 +1041,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
           start: "31500 top",
           end: "36500 bottom",
           scrub: 1,
-          markers: true,
+        //   markers: true,
           invalidateOnRefresh: true,
         },
       });
@@ -1090,7 +1090,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
           start: "38500 top",
           end: "41500 bottom",
           scrub: 1,
-          markers: true,
+        //   markers: true,
           // invalidateOnRefresh: true, 설정하면 안보임
         },
       });
@@ -1113,7 +1113,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
           start: "44500 top",
           end: "50000 bottom",
           scrub: 1,
-          markers: true,
+        //   markers: true,
           invalidateOnRefresh: true,
         },
       });
@@ -1152,7 +1152,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
           start: "0 top",
           end: "600 bottom",
           scrub: 1,
-          markers: true,
+        //   markers: true,
           invalidateOnRefresh: true,
         },
       });
@@ -1169,7 +1169,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
           start: "700 top",
           end: "1200 bottom",
           scrub: 1,
-          markers: true,
+        //   markers: true,
           invalidateOnRefresh: true,
         },
       });
@@ -1207,7 +1207,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
           start: "1600 top",
           end: "5400 bottom",
           scrub: 1,
-          markers: true,
+        //   markers: true,
           invalidateOnRefresh: true,
         },
       });
@@ -1275,7 +1275,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
           end: "8400 bottom",
           // scrub: 2,
           scrub: 1,
-          markers: true,
+        //   markers: true,
           invalidateOnRefresh: true,
         },
       });
@@ -1341,7 +1341,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
           start: "10000 top",
           end: "14400 bottom",
           scrub: 1,
-          markers: true,
+        //   markers: true,
           invalidateOnRefresh: true,
         },
       });
@@ -1394,7 +1394,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
           start: "15000 top",
           end: "17500 bottom",
           scrub: 1,
-          markers: true,
+        //   markers: true,
           invalidateOnRefresh: true,
         },
       });
@@ -1442,7 +1442,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
           start: "16500 top",
           end: "18500 bottom",
           scrub: 1,
-          markers: true,
+        //   markers: true,
           invalidateOnRefresh: true,
         },
       });
@@ -1465,7 +1465,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
           start: "19500 top",
           end: "21500 bottom",
           scrub: 1,
-          markers: true,
+        //   markers: true,
           invalidateOnRefresh: true,
         },
       });
@@ -1484,7 +1484,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
           start: "22500 top",
           end: "24500 bottom",
           scrub: 1,
-          markers: true,
+        //   markers: true,
           invalidateOnRefresh: true,
         },
       });
@@ -1511,7 +1511,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
           start: "25500 top",
           end: "30500 bottom",
           scrub: 1,
-          markers: true,
+        //   markers: true,
           invalidateOnRefresh: true,
         },
       });
@@ -1571,7 +1571,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
           start: "31500 top",
           end: "35500 bottom",
           scrub: 1,
-          markers: true,
+        //   markers: true,
           invalidateOnRefresh: true,
         },
       });
@@ -1620,7 +1620,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
           start: "36500 top",
           end: "38500 bottom",
           scrub: 1,
-          markers: true,
+            //   markers: true,
           // invalidateOnRefresh: true, 설정하면 안보임
         },
       });
@@ -1643,7 +1643,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
           start: "39500 top",
           end: "47000 bottom",
           scrub: 1,
-          markers: true,
+        //   markers: true,
           invalidateOnRefresh: true,
         },
       });
