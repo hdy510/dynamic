@@ -16,8 +16,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
         console.log(sc);
            // 0. scrollDown 스크롤탑 50 이하에서만 보이기
         if (sc > 10) {
-            document.querySelector(".scrollDown").style.visibility = "hidden";
-            document.querySelector(".scrollDown").style.opacity = "0";
+            // document.querySelector(".scrollDown").style.visibility = "hidden";
+            // document.querySelector(".scrollDown").style.opacity = "0";
         } else {
             document.querySelector(".scrollDown").style.visibility = "visible";
             document.querySelector(".scrollDown").style.opacity = "1";
